@@ -65,11 +65,16 @@ Disordered probability predictions can be obtained using [RaptorX Property](http
 #### Fragment Library Construction
 ##### Secondary Structure Prediction
 Secondary structure predictions can be obtained using [RaptorX Property](http://raptorx.uchicago.edu/StructurePropertyPred/predict/), [PsiPred PSIPRED 4.0](http://bioinf.cs.ucl.ac.uk/psipred/) or other servers of your choice.
-After obtaining these prediction files, the script _ _Diso_SS2_Reweight_Opt_FFT.py_ _ can be used to generate secondary structure predictions files that are reweighted based on disordered probabilities and vice-versa.
+After obtaining these prediction files, the script _Diso_SS2_Reweight_Opt_FFT.py_ can be used to generate secondary structure predictions files that are reweighted based on disordered probabilities and vice-versa.
+
 - To generate a reweighted secondary structure prediction based on a disordered probability prediction:
+
 	```run Diso_SS2_Reweight_Opt_FFT.py -ssin INPUT_SS2_PREDICTION_FILE -sstype 4_LETTER_CODE -disoin INPUT_DISORDER_PREDICTION_FILE -out REWEIGHTED_SS2_PREDICTION_OUTPUT_FILE```
+	
 - To generate a reweighted disordered probability based on the secondary structure prediction, add the following flag to the above run command:
+
 	```-disoout REWEIGHTED_DISORDER_PREDICTION_OUTPUT_FILE```
+	
 Currently this code only supports inputs from disodered probability predictions from the servers named above (which take on the same format) and secondary structure predictions from those named above and [JUFO](http://www.meilerlab.org/index.php/servers/show?s_id=5),
 which all vary in format. All secondary structure outputs follow the PSIPRED format rquired by the Rosetta [FragmentPicker](https://www.rosettacommons.org/docs/latest/application_documentation/utilities/app-fragment-picker) application.
 ## Running FastFloppyTail
