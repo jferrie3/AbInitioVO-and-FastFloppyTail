@@ -75,8 +75,11 @@ After obtaining these prediction files, the script _Diso_SS2_Reweight_Opt_FFT.py
 
 	```-disoout REWEIGHTED_DISORDER_PREDICTION_OUTPUT_FILE```
 	
-Currently this code only supports inputs from disodered probability predictions from the servers named above (which take on the same format) and secondary structure predictions from those named above and [JUFO](http://www.meilerlab.org/index.php/servers/show?s_id=5),
+Currently this code only supports inputs from disodered probability predictions from the servers named above (which take on the same format) and secondary structure predictions from those named above and [Jufo](http://www.meilerlab.org/index.php/servers/show?s_id=5),
 which all vary in format. All secondary structure outputs follow the PSIPRED format rquired by the Rosetta [FragmentPicker](https://www.rosettacommons.org/docs/latest/application_documentation/utilities/app-fragment-picker) application.
+
+###### Reweighting Methods
+Currently, there have been two approaches used to reweight secondary structure predictions. The first, termed _best-reweighting_
 ## Running FastFloppyTail
 
 ## Analysis
