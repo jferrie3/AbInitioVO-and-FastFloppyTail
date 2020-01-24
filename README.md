@@ -22,9 +22,14 @@ __Required Python Packages:__
 __Anaconda Environment:__
 An anaconda environment containing all necessary packages can be found in the anaconda folder. Build time for this Anaconda environment takes on the order of mintues to hours depending on the number of processors used and is largely dependent on the PyRosetta build time.
 
-__Additional Dependent Softwares:__
-- blast-2.2.26
+__Additional Reccommended Softwares:__
+- Blast (blast-2.2.26)
+- [DSSP](https://swift.cmbi.umcn.nl/gv/dssp/) (installed via [conda](https://anaconda.org/salilab/dssp)) 
+- [Sparta+](https://spin.niddk.nih.gov/bax/software/SPARTA+/)
+- [PALES](https://www3.mpibpc.mpg.de/groups/zweckstetter/_links/software_pales.htm#HuP)
 
 ## Running AbInitioVO
 
 ## Running FastFloppyTail
+
+## Analysis
