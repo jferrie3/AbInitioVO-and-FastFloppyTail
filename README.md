@@ -10,7 +10,10 @@ structure predictions to influence 9-mer and 3-mer [fragment picking](https://ww
 predict the structures of ordered domains, of both fully ordered and partially ordered proteins, as well as identifying disordered regions.
 
 ### FastFloppyTail
-XXXXXX
+FastFloppyTail is an improved variant of the [FloppyTail](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/floppy-tail) Rosetta algorithm written for PyRosetta. The algorithm features 
+a reduction in sidechain packing moves along with an increase in the fequency with which sampled structures are returned to their minima. Overall this algorithm boasts both a marked increase in accuracy compared to experimental 
+data along with a 10-fold reduction in compute time compared to FloppyTail.
+
 ## Installation Guide
 __Operating System:__ Linux (64-bit)
 
