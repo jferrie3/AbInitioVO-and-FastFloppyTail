@@ -135,7 +135,7 @@ Note that the same inputs described above are used by the FastFloppyTail algorit
 ```
 After the initial structure generation is performed using _FastFloppyTail.py_, the loweset energy outputs can be selected using the _FloppyTail_Analysis.py_ script, which automatically selects the 1000 lowest energy conformers.
 
-```run AbInitio_Analysis.py D 1 140 ../asyn_STD.pdb Abasyn_*/```
+```run FloppyTail_Analysis.py D 1 140 ../asyn_STD.pdb FFT_asyn_*/```
 
 The input structure mirrors that of _AbInitio_Analysis.py_ described above. After selecting the 1000 lowest energy structures, they can be further refined using the [FastRelax](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover) algorithm and can be run via the command:
 
