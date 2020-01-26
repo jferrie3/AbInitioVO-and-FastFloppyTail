@@ -13,6 +13,9 @@ run AbInitioVO.py -in asyn.fasta.txt -abinitiovo - abnstruct 5 -diso asyn.diso -
 ```
 
 ### FastFloppyTail
+
 ```run FastFloppyTail.py -in asyn.fasta.txt -ftnstruct 500 -t_frag asyn_dcor_frags.200.3mers```
+
 ```run FloppyTail_Analysis.py D 1 140 ./asyn_STD.pdb ./```
+
 ```run FloppyTail_Relax.py```
