@@ -97,7 +97,10 @@ using the command:
 
 ###### Sequence Profile from PSI-Blast
 An optional input for the Fragment Picker application is a sequence profile generate with PSI-BLAST. This requires that you download a local version of a sequence database (the [non-redundant Blast database](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download) is preferred) 
-along with the appropriate version of BLAST specified above. Lastly, the PERL script found in the _BLAST_ directory within the _Fragment_Picker_ directory can be used to generate the sequence profile .chk file used by the Fragment Picker.
+along with the appropriate version of BLAST specified above. Lastly, the PERL script found in the _BLAST_ directory within the _Fragment_Picker_ directory can be used to generate the sequence profile .chk file used by the Fragment Picker, however you will likely need to update line 33 which specifies 
+location of your protein sequence directory:
+
+```./Blast_for_Checkpoint_File.pl PROTEIN_SEQUENCE.fasta```
 
 ### Analysis
 The analysis script _AbInitio_Analysis.py_ has been provided which performs very basic analysis of the output structures and information and can be run via the command:
@@ -137,3 +140,5 @@ The input structure mirrors that of _AbInitio_Analysis.py_ described above. Afte
 ```run FloppyTail_Relax.py```
 
 ### Analysis
+Within the _Analysis_Scripts_ directory there are a number of scripts that are capable of compuing a variety of parameters for comparison to experiments. The _README.md_ found inside that directory 
+contains information about what is required and generated for each analysis. 
