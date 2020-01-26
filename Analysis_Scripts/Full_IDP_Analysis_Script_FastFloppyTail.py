@@ -15,26 +15,26 @@ if foldernumber == 1:
 	os.mkdir('PALES')
 	os.mkdir('SPARTA')
 	# Run PDB Compiler
-	os.system('python /home/gianna1/FloppyTail/Analysis_Packages/pdb_assembler.py asyn_compiled.pdb FloppyTail_Relaxed_*.pdb')
+	os.system('python Analysis_Scripts/pdb_assembler.py asyn_compiled.pdb FloppyTail_Relaxed_*.pdb')
 	# Run Polymer Analysis
-	os.system('python /home/gianna1/FloppyTail/Analysis_Packages/polymer_analysis.py asyn_compiled.pdb')
+	os.system('python Analysis_Scripts/polymer_analysis.py asyn_compiled.pdb')
 	# Run Distance Extraction
-	os.system('python /home/gianna1/FloppyTail/Analysis_Packages/Distance_Extraction.py /home/gianna1/FloppyTail/PRE_Data_Compiled/asyn_distances.cst asyn_distances.out asyn_compiled.dm asyn_compiled.std')
+	os.system('python Analysis_Scripts/Distance_Extraction.py Data_Compiled/asyn_distances.cst asyn_distances.out asyn_compiled.dm asyn_compiled.std')
 	# Run FRET Computes
-	os.system('python /home/gianna1/FloppyTail/Analysis_Packages/EFRETs_from_Ensembles.py /home/gianna1/FloppyTail/PRE_Data_Compiled/asyn_efret.txt FloppyTail_Relaxed_*.pdb')
+	os.system('python Analysis_Scripts/EFRETs_from_Ensembles.py Data_Compiled/asyn_efret.txt FloppyTail_Relaxed_*.pdb')
 	# Run PRE Computes
-	os.system('python /home/gianna1/FloppyTail/Analysis_Packages/PREs_from_Ensembles.py /home/gianna1/FloppyTail/PRE_Data_Compiled/asyn.pre FloppyTail_Relaxed_*.pdb')
-	os.system('python /home/gianna1/FloppyTail/Analysis_Packages/PRE_Data_Comparison.py /home/gianna1/FloppyTail/PRE_Data_Compiled/asyn.pre')
+	os.system('python Analysis_Scripts/PREs_from_Ensembles.py Data_Compiled/asyn.pre FloppyTail_Relaxed_*.pdb')
+	os.system('python Analysis_Scripts/PRE_Data_Comparison.py Data_Compiled/asyn.pre')
 	# Run DSSP Analysis
 	os.mkdir('DSSP')
 	os.chdir('DSSP')
-	os.system('python /home/gianna1/FloppyTail/Analysis_Packages/Process_DSSP.py ../FloppyTail_Relaxed_*.pdb')
-	os.system('python /home/gianna1/FloppyTail/Analysis_Packages/dssp_output_analysis.py ../asyn_compiled.nu dssp_output_*.txt')
+	os.system('python Analysis_Scripts/Process_DSSP.py ../FloppyTail_Relaxed_*.pdb')
+	os.system('python Analysis_Scripts/dssp_output_analysis.py ../asyn_compiled.nu dssp_output_*.txt')
 	dssp_output_list = ['output_tco.txt', 'output_racc.txt', 'output_hbond.txt', 'output_hbondtotal.txt', 'output_acc_total.txt', 'output_phi_psi_2his.txt', 'output_phi_psi_no_GLY_2his.txt', 'Percent_HEL.txt']
 	for dssp_output in dssp_output_list:
 		copy(dssp_output, '../asyn_' + dssp_output.split('.')[0] + '.txt')
 	# Run J-Coupling Computes
-	os.system('python /home/gianna1/FloppyTail/Analysis_Packages/J_Couplings.py dssp_output_*.txt')
+	os.system('python Analysis_Scripts/J_Couplings.py dssp_output_*.txt')
 	j_couplings_output_list = ['J-Coupling_RMSD.txt']
 	for j_coupling_output in j_couplings_output_list:
 		copy(j_coupling_output, '../asyn_' + j_coupling_output.split('.')[0] + '.txt')
@@ -42,7 +42,7 @@ if foldernumber == 1:
 	os.chdir('../')
 	analyze_PALES = False
 	number_of_pdb = len(glob.glob('FloppyTail_Relaxed_*.pdb'))
-	number_of_res = len(np.genfromtxt('/home/gianna1/FloppyTail/PRE_Data_Compiled/asyn_PALES.in', dtype=None, encoding=None, skip_header=7))
+	number_of_res = len(np.genfromtxt('Data_Compiled/asyn_PALES.in', dtype=None, encoding=None, skip_header=7))
 	while analyze_PALES == False:
 		list_of_PALES_outputs = glob.glob('PALES/PALES_*/*.out')
 		list_of_PALES_tables = glob.glob('PALES/*.tbl')
@@ -60,7 +60,7 @@ if foldernumber == 1:
 			analyze_PALES = True
 		else:
 			time.sleep(300)
-	os.system('python /home/gianna1/FloppyTail/Analysis_Packages/PALES_Analysis_Parallel_bestFit.py PALES/')
+	os.system('python Analysis_Scripts/PALES_Analysis_Parallel_bestFit.py PALES/')
 	# Wait for Sparta+ to finish and analyze
 	analyze_Sparta = False
 	while analyze_Sparta == False:
@@ -69,7 +69,7 @@ if foldernumber == 1:
 			analyze_Sparta = True
 		else:
 			time.sleep(300)
-	os.system('python /home/gianna1/FloppyTail/Analysis_Packages/Sparta_Analysis_Post_Process_2.py /home/gianna1/FloppyTail/PRE_Data_Compiled/asyn_chemical_shifts.nmr SPARTA/Pred_output_*.txt')
+	os.system('python Analysis_Scripts/Sparta_Analysis_Post_Process_2.py Data_Compiled/asyn_chemical_shifts.nmr SPARTA/Pred_output_*.txt')
 	
 	
 # Items for Parallel run on Remaining Threads
@@ -81,7 +81,7 @@ if foldernumber > 1:
 	os.chdir('PALES')
 	os.mkdir('PALES_' + str(foldernumber))
 	os.chdir('PALES_' + str(foldernumber))
-	os.system('python ../../Process_PALES_Parallel_' + str(foldernumber) + '.py /home/gianna1/FloppyTail/PRE_Data_Compiled/asyn_PALES.in ../../FloppyTail_Relaxed_*.pdb &> /dev/null')
+	os.system('python ../../Process_PALES_Parallel_' + str(foldernumber) + '.py Data_Compiled/asyn_PALES.in ../../FloppyTail_Relaxed_*.pdb &> /dev/null')
 	os.chdir('../../')
 	# Wait from SPARTA+
 	while not os.path.exists('SPARTA'):

@@ -142,3 +142,11 @@ The input structure mirrors that of _AbInitio_Analysis.py_ described above. Afte
 ### Analysis
 Within the _Analysis_Scripts_ directory there are a number of scripts that are capable of compuing a variety of parameters for comparison to experiments. The _README.md_ found inside that directory 
 contains information about what is required and generated for each analysis. 
+
+## Testing Rosetta Parameters
+The directory _Testing_Rosetta_Parameters_ contains a set of Python/PyRosetta scripts which were used to test which parameters of Rosetta hindered accurate prediction of disordered proteins.
+All of these are pre-programmed to simulated alpha-synuclein and can be run via 
+```run SIMULATION_NAME.py```
+
+## Cluster Submit Scripts
+All of the scripts placed in the main directory are designed to run on a CPU-based cluster for parallel computing. The _Cluster_Submit_Scirpts_Directory contains sample submit scripts for most of the code contained in this project.
