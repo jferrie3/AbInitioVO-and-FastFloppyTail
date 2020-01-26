@@ -28,7 +28,9 @@ __Required Python Packages:__
 - scipy (1.1.0)
 
 __Anaconda Environment:__
-An anaconda environment containing all necessary packages can be found in the anaconda folder. Build time for this Anaconda environment takes on the order of mintues to hours depending on the number of processors used and is largely dependent on the PyRosetta build time.
+An anaconda environment containing all necessary packages can be found in the anaconda folder. Build time for this Anaconda environment takes on the order of mintues to hours depending on the number of processors used and is largely dependent on the PyRosetta build time. With this file you can generate a local version of this environment using the command:
+
+```conda env create -f lion.yml```
 
 __Additional Reccommended Software Packages:__
 - Blast (blast-2.2.26)
