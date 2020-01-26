@@ -151,4 +151,4 @@ All of these are pre-programmed to simulated alpha-synuclein and can be run via
 ```run SIMULATION_NAME.py```
 
 ## Cluster Submit Scripts
-All of the scripts placed in the main directory are designed to run on a CPU-based cluster for parallel computing. The _Cluster_Submit_Scirpts_Directory contains sample submit scripts for most of the code contained in this project.
+All of the scripts placed in the main directory are designed to run on a CPU-based cluster for parallel computing. The _Cluster_Submit_Scirpts_Directory_ contains sample submit scripts for most of the code contained in this project.
