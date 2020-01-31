@@ -1,6 +1,7 @@
 # AbInitioVO and FastFloppyTail
  AbInitio Variable Order and FastFloppyTail Algorithms for Protein Structure Prediction from Sequence
 
+A manuscript detailing the methods and demonstrating the utility of each of these algorithms can be found on [bioRxiv](https://doi.org/10.1101/2020.01.30.925636).  
 ## Algorithm Descritions
 ### AbInitioVO
 The AbInitio Variable Order (AbInitioVO) PyRosetta algorithm is an improvement of the [AbInitio-Relax](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/abinitio-relax)
