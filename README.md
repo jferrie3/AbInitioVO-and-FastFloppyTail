@@ -29,7 +29,7 @@ __Required Python Packages:__
 - scipy (1.1.0)
 
 __Anaconda Environment:__
-An anaconda environment containing all necessary packages can be found in the anaconda folder. Build time for this Anaconda environment takes on the order of mintues to hours depending on the number of processors used and is largely dependent on the PyRosetta build time. With this file you can generate a local version of this environment using the command:
+An anaconda environment containing all necessary packages can be found in the anaconda folder. Build time for this Anaconda environment takes on the order of mintues to hours depending on the number of processors used and is largely dependent on the PyRosetta build time. On a normal computer this is expected to take ~30 minutes. With this file you can generate a local version of this environment using the command:
 
 ```conda env create -f lion.yml```
 
@@ -39,6 +39,12 @@ __Additional Reccommended Software Packages:__
 - [DSSP](https://swift.cmbi.umcn.nl/gv/dssp/) (installed via [conda](https://anaconda.org/salilab/dssp)) 
 - [Sparta+](https://spin.niddk.nih.gov/bax/software/SPARTA+/)
 - [PALES](https://www3.mpibpc.mpg.de/groups/zweckstetter/_links/software_pales.htm#HuP)
+
+## Simulation Times
+All times reported herein were from 140-residue alpha-Synuclein on a normal computer. The previously reported FloppyTail simulation method took ~30 minutes per structure whereas the FastFloppyTail simulation method took 
+~3 minutes per structure. The AbInitio and AbInitioVO algorithms both required ~45 minutes per structure and Relaxes took ~3 minutes a structure. The "Generalized Simulations" can be found in the "Testing Rosetta Parameters" folder and 
+on average, Full-atom Generalized Simulations required ~3 hours per structure while simulations using exclusively Centroid coarse-graining required 
+~30 minutes per structure. Simulations using both coarse-grained and all-atom molecular representations (SimAnn) took ~1.5 hours per structure. Unless otherwise noted, all other simulation/analyses develop herein take less than 5 minutes to run.
 
 ## Running AbInitioVO
 AbInitioVO is run using the command-line, where inputs are specified using an arguement parser. An example run which can also be found in the demo section is:
@@ -61,6 +67,7 @@ Each of the parser flags are described below:
 -refinesubset  --Refine_Subset  Only subjects the lowest X% of structures to Relax refinement where X is specified as input following flag. Default 100
 -relnstruct  --Number_of_Relax_Structures  Number of independent full-atom Relax sampling trajectories from a single AbInitio structure. Default 50
 ```
+
 ### Acquiring the Necessary Inputs
 All of the files (FASTA, Disordered Probability Prediction and Fragment Libraries) can all be obtained from the protein sequence as detailed below
 #### Disordered Probability Prediction
