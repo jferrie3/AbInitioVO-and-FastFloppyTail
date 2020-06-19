@@ -129,12 +129,12 @@ p=Pose()
 if args.Input_FASTA_File:
 	p = pose_from_sequence(fasta_sequence, "centroid")
 if args.Input_PDB_File:
-	p = pose_from_pdb(str(args.Input_PDB_File))
+	p = pose_from_pdb(str(args.Input_PDB_File), "centroid")
 if args.Order_Code:
 	if args.Order_Code == 'D':
 		p = pose_from_sequence(fasta_sequence, "centroid")
 	if args.Order_Code == 'P':
-		p = pose_from_pdb(str(args.Input_PDB_File))
+		p = pose_from_pdb(str(args.Input_PDB_File), "centroid")
 
 starting_p = Pose()
 starting_p.assign(p)
@@ -269,11 +269,7 @@ switch = SwitchResidueTypeSetMover('fa_standard')
 switch_cen = SwitchResidueTypeSetMover('centroid')
 
 ### The Task Operations
-if args.Input_FASTA_File or args.Order_Code == 'D':
-	switch.apply(p)
-else:
-	switch_cen.apply(starting_p)
-
+switch.apply(p)
 fulltask = standard_packer_task(p)
 fulltask.restrict_to_repacking()
 switch_cen.apply(p)
@@ -289,7 +285,7 @@ random_stage_0.add_mover(vdwmin)
 
 random_stage_2 = SequenceMover()
 random_stage_2.add_mover(full_random)
-#random_stage_2.add_mover(fullrottrial)
+random_stage_2.add_mover(fullrottrial)
 
 ## Setting up the Monte-Carlo
 mc_stage_0 = MonteCarlo(p, sf_stage_0, 10.0)
@@ -305,13 +301,6 @@ trial_stage_1b = TrialMover(cenmin, mc_stage_1)
 trial_stage_2a = TrialMover(random_stage_2, mc_stage_2)
 trial_stage_2b = TrialMover(fullmin, mc_stage_2)
 trial_stage_2c = TrialMover(fullpack, mc_stage_2)
-
-trial_stage_0.keep_stats_type(pyrosetta.rosetta.protocols.moves.StatsType.no_stats)
-trial_stage_1a.keep_stats_type(pyrosetta.rosetta.protocols.moves.StatsType.no_stats)
-trial_stage_1b.keep_stats_type(pyrosetta.rosetta.protocols.moves.StatsType.no_stats)
-trial_stage_2a.keep_stats_type(pyrosetta.rosetta.protocols.moves.StatsType.no_stats)
-trial_stage_2b.keep_stats_type(pyrosetta.rosetta.protocols.moves.StatsType.no_stats)
-trial_stage_2c.keep_stats_type(pyrosetta.rosetta.protocols.moves.StatsType.no_stats)
 
 ## Setting up Repeat Movers
 stage_0 = RepeatMover(trial_stage_0, 1000)
@@ -329,18 +318,15 @@ relax.set_scorefxn(sf_relax)
 relax.max_iter(200)
 relax.set_movemap(relaxmap)
 
-
 # The Simulation and Output
 for i in range(ftnstruct):
 	p.assign(starting_p)
-	stage_0.apply(p)
 	mc_stage_0.reset(p)
 	mc_stage_1.reset(p)
+	stage_0.apply(p)
 	for j in range(cycles*250):
 		stage_1a.apply(p)
-		mc_stage_1.recover_low(p)
 		stage_1b.apply(p)
-		mc_stage_1.recover_low(p)
 		if j % 50 == 0:
 			sf_stage_1.show(p)
 	mc_stage_1.recover_low(p)
@@ -348,15 +334,10 @@ for i in range(ftnstruct):
 	mc_stage_2.reset(p)
 	for k in range(cycles*100):
 		stage_2a.apply(p)
-		mc_stage_2.recover_low(p)
 		stage_2b.apply(p)
-		mc_stage_2.recover_low(p)
 		stage_2a.apply(p)
-		mc_stage_2.recover_low(p)
 		stage_2c.apply(p)
-		mc_stage_2.recover_low(p)
 		stage_2b.apply(p)
-		mc_stage_2.recover_low(p)
 		if k % 25 == 0:
 			sf_stage_2.show(p)
 	mc_stage_2.recover_low(p)	

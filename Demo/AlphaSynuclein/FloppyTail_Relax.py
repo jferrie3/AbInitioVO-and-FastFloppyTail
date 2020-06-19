@@ -19,15 +19,13 @@ from pyrosetta.rosetta.protocols.moves import *
 from pyrosetta.rosetta.core.fragment import *
 from pyrosetta.rosetta.protocols.minimization_packing import *
 
-sge_task_id = FOLDERNUMBER
-parallel_num = sge_task_id - 1
 working_dir = 'FloppyTail_Relaxed_'
 
 # Creates a single array/file that contains all scores from all output structures
 abin_out_file = "FloppyTail_Compiled.sc"
 rewrite_abin_out_file = "FloppyTail_Relaxed_Scores_"
 perresval_abin_out_file = "FloppyTail_PerResEnergy_"
-new_directory = 'FloppyTail_Relaxed_' + str(sge_task_id)
+new_directory = 'FloppyTail_Relaxed'
 new_parent_directory = 'FloppyTail_Relaxed_Compiled'
 new_abin_structure_names = 'FloppyTail_Relaxed_'
 old_abin_structure_names = 'FloppyTail_'
