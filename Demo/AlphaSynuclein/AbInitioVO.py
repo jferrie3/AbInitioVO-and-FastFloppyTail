@@ -647,6 +647,5 @@ for cen_out_struct_idx in range(refine_number):
 			outf = open("AbInitio_FullAtom.sc", 'a')
 			pdb_out = "AbInitio_FullAtom_out_" + str(cen_out_struct_idx) + "_" + str(relnstruct_idx) + ".pdb"
 		outf.write("%s\t%s\t%.4f\t%.4f\n" % (pdb_out, str(cen_out_struct_item), sfrelax(relax_p), sfrg(relax_p)))
-		sfrelax(relax_p)
 		relax_p.dump_pdb(pdb_out)
 		outf.close()
