@@ -11,10 +11,12 @@ parser = argparse.ArgumentParser(description='Program')
 parser.add_argument('-ssin', '--Input_SecStruc_File', action='store', type=str, required=True,
 	help='name of file containing secondary structure prediction from server of interest')
 parser.add_argument('-disoin', '--Input_DisoPred_File', action='store', type=str, required=False,
-	help='name of file containing RaptorX prediction of residue disorder probability')
+	help='name of file containing prediction of residue disorder probability')
+parser.add_argument('-disotype', '--DisoPred_File_Type', action='store', type=str, required=True,
+	help='name of server uses to produce the Input_SecStruc_File, currently supports RaptorX = rapx, PsiPred = ppred')
 parser.add_argument('-sstype', '--SecStruc_File_Type', action='store', type=str, required=True,
 	help='name of server uses to produce the Input_SecStruc_File, currently supports RaptorX = rapx, PsiPred = ppred, Jufo = jufo')
-parser.add_argument('-out', '--Output_File_Name', action='store', type=str, required=True,
+parser.add_argument('-ssout', '--Output_File_Name', action='store', type=str, required=True,
 	help='name of the output file')
 parser.add_argument('-disoout', '--Output_Disorder_File_Name', action='store', type=str, required=False,
 	help='name of the output file, ONLY specify if you want the disordered file re-written based on the input SS2 data')
@@ -23,7 +25,13 @@ args = parser.parse_args()
 # Import the RaptorX Disorder File
 diso_dat = 1
 if args.Input_DisoPred_File:
-	disorder_dat = np.genfromtxt(args.Input_DisoPred_File, dtype=[('dat1', 'f8'), ('dat2', '|S2'), ('dat3', '|S1'), ('dat4', 'f8')], delimiter=' ', skip_header=3) # 3 for raptorx
+	if args.DisoPred_File_Type == 'rapx':
+		disorder_dat = np.genfromtxt(args.Input_DisoPred_File, dtype=[('dat1', 'f8'), ('dat2', '|S2'), ('dat3', '|S1'), ('dat4', 'f8')], delimiter=' ', skip_header=3) # 3 for raptorx
+	elif args.DisoPred_File_Type == 'ppred':
+		disorder_dat = np.genfromtxt(args.Input_DisoPred_File, dtype=[('dat1', 'f8'), ('dat2', '|S2'), ('dat3', '|S1'), ('dat4', 'f8')], skip_header=5) # 3 for psipred
+		for disoidx,disoitem in enumerate(disorder_dat):
+			if np.isnan(disoitem[3]) == True:
+				disorder_dat[disoidx][3] = 0.0
 	diso_dat = np.empty((len(disorder_dat),1))
 	for i in range(len(disorder_dat)):
 		diso_dat[i] = disorder_dat[i][3]	
@@ -143,13 +151,26 @@ if args.Output_Disorder_File_Name:
 		if res_item < new_frag_probs[res_idx][3]:
 			diso_dat[res_idx] = new_frag_probs[res_idx][3]
 	outfd = open(args.Output_Disorder_File_Name, 'w')
-	file_tracker = []
-	with open(args.Input_DisoPred_File, 'r') as indisofile:
-		indisodata = indisofile.readlines() 	 
-		for line_idx, line_item in enumerate(indisodata):
-			if line_idx > 2:
-				file_tracker.append(line_item[:9])
-				file_tracker.append("%.3f" % round(float(diso_dat[line_idx-3]),3) + ' \n')
+	outfd.write('#AUCpreD: order/disorder state prediction results by profile mode')
+	outfd.write("\n")
+	outfd.write('#Disorder residues are marked with asterisks (*) above threshold 0.500')
+	outfd.write("\n")
+	outfd.write('# Ordered residues are marked with dots (.) below threshold 0.500')
+	outfd.write("\n")
+	for line_idx,line_item in enumerate(diso_dat):
+		if new_frag_probs[line_idx][0] < 10:
+			if line_item > 0.5:
+				outfd.write("   %i %s %s %.3f\n" % (new_frag_probs[line_idx][0],new_frag_probs[line_idx][1],'*',line_item[0]))
 			else:
-				file_tracker.append(line_item)
-	np.savetxt(args.Output_Disorder_File_Name, file_tracker, fmt='%s', newline='')			
+				outfd.write("   %i %s %s %.3f\n" % (new_frag_probs[line_idx][0],new_frag_probs[line_idx][1],'.',line_item[0]))
+		elif new_frag_probs[line_idx][0] < 100:
+			if line_item > 0.5:
+				outfd.write("  %i %s %s %.3f\n" % (new_frag_probs[line_idx][0],new_frag_probs[line_idx][1],'*',line_item[0]))
+			else:
+				outfd.write("  %i %s %s %.3f\n" % (new_frag_probs[line_idx][0],new_frag_probs[line_idx][1],'.',line_item[0]))
+		elif new_frag_probs[line_idx][0] < 1000:
+			if line_item > 0.5:
+				outfd.write(" %i %s %s %.3f\n" % (new_frag_probs[line_idx][0],new_frag_probs[line_idx][1],'*',line_item[0]))
+			else:
+				outfd.write(" %i %s %s %.3f\n" % (new_frag_probs[line_idx][0],new_frag_probs[line_idx][1],'.',line_item[0]))
+	outfd.close()
