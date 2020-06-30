@@ -19,8 +19,9 @@ from pyrosetta.rosetta.protocols.moves import *
 from pyrosetta.rosetta.core.fragment import *
 from pyrosetta.rosetta.protocols.minimization_packing import *
 
-sge_task_id = 1
+sge_task_id = FOLDERNUMBER
 parallel_num = sge_task_id - 1
+parallel_total = 25
 working_dir = 'FloppyTail_Relaxed_'
 
 # Creates a single array/file that contains all scores from all output structures
@@ -63,22 +64,24 @@ for input_file_idx,input_file in enumerate(process_list):
 	pdb_file_list = np.genfromtxt(str(analysis_folder_name) + "FloppyTail_Compiled.sc", dtype=str)
 	residue_ref2015_array = []
 	for pdb_file_idx, pdb_file_item in enumerate(pdb_file_list):
-		p = pose_from_pdb(str(analysis_folder_name) + str(pdb_file_item[0]))
-		residue_ref2015_set = []
-		relax.apply(p)
-		sf2015(p)
-		sf2015.show(p)
-		for res_num in range(p.total_residue()):
-			residue_ref2015_set.append(p.energies().residue_total_energy(res_num+1))
-		residue_ref2015_array.append(residue_ref2015_set)
-		pdb_out_name = str(new_structure_names) + str(pdb_file_idx) + '.pdb'
-		os.chdir(new_directory)
-		outf = open(str(rewrite_list[input_file_idx]) + str(parallel_num) + '.sc', 'a')
-		outf.write("%s\t%s\t%.4f\t%.4f\n" % (pdb_out_name, str(pdb_file_item[0]), sf2015(p), sfrg(p)))
-		outf.close()
-		p.dump_pdb(pdb_out_name)
-		os.chdir('..')
-
+		if (pdb_file_idx - parallel_num) % parallel_total == 0:
+			p = pose_from_pdb(str(analysis_folder_name) + str(pdb_file_item[0]))
+			residue_ref2015_set = []
+			relax.apply(p)
+			sf2015(p)
+			sf2015.show(p)
+			for res_num in range(p.total_residue()):
+				residue_ref2015_set.append(p.energies().residue_total_energy(res_num+1))
+			residue_ref2015_array.append(residue_ref2015_set)
+			pdb_out_name = str(new_structure_names) + str(pdb_file_idx) + '.pdb'
+			os.chdir(new_directory)
+			outf = open(str(rewrite_list[input_file_idx]) + str(parallel_num) + '.sc', 'a')
+			outf.write("%s\t%s\t%.4f\t%.4f\n" % (pdb_out_name, str(pdb_file_item[0]), sf2015(p), sfrg(p)))
+			outf.close()
+			p.dump_pdb(pdb_out_name)
+			os.chdir('..')
+		else:
+			continue
 	residue_ref2015_array = np.average(residue_ref2015_array, axis=0)
 	os.chdir(new_directory)
 	final_ref2015_array_file = str(perresval_list[input_file_idx]) + str(parallel_num) + '.txt'
