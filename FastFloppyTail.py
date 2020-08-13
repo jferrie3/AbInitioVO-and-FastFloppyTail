@@ -48,6 +48,8 @@ parser.add_argument('-inpdb', '--Input_PDB_File', action='store', type=str, requ
 	help='Name of the text file containing the PDB structure of the protein of interest. All residues are required, missing residues are not constructed')
 parser.add_argument('-code', '--Order_Code', action='store', type=str, required=False,
 	help='Single letter code specifying O = ordered, D = disordered, P = partially ordered. If D is supplied, fasta is used, if P is supplied PDB is used')
+parser.add_argument('-pymol', '--PYMOL', action='store_true', required=False,
+	help='Running with this flag will utilize PyMOL Mover for visualization')
 args = parser.parse_args()
 
 ## Imports from Parser and Defaults
@@ -328,38 +330,61 @@ relax.dualspace(True)
 relax.set_scorefxn(sf_relax)
 relax.max_iter(200)
 relax.set_movemap(relaxmap)
-
+if args.PYMOL:
+	pmm = PyMOLMover()
 
 # The Simulation and Output
 for i in range(ftnstruct):
 	p.assign(starting_p)
+	if args.PYMOL:
+		pmm.apply(p)
 	stage_0.apply(p)
+	if args.PYMOL:
+		pmm.apply(p)
 	mc_stage_0.reset(p)
 	mc_stage_1.reset(p)
 	for j in range(cycles*250):
 		stage_1a.apply(p)
 		mc_stage_1.recover_low(p)
+		if args.PYMOL:
+			pmm.apply(p)
 		stage_1b.apply(p)
 		mc_stage_1.recover_low(p)
+		if args.PYMOL:
+			pmm.apply(p)
 		if j % 50 == 0:
 			sf_stage_1.show(p)
 	mc_stage_1.recover_low(p)
+	if args.PYMOL:
+		pmm.apply(p)
 	switch.apply(p)
 	mc_stage_2.reset(p)
 	for k in range(cycles*100):
 		stage_2a.apply(p)
 		mc_stage_2.recover_low(p)
+		if args.PYMOL:
+			pmm.apply(p)
 		stage_2b.apply(p)
 		mc_stage_2.recover_low(p)
+		if args.PYMOL:
+			pmm.apply(p)
 		stage_2a.apply(p)
 		mc_stage_2.recover_low(p)
+		if args.PYMOL:
+			pmm.apply(p)
 		stage_2c.apply(p)
 		mc_stage_2.recover_low(p)
+		if args.PYMOL:
+			pmm.apply(p)
 		stage_2b.apply(p)
 		mc_stage_2.recover_low(p)
+		if args.PYMOL:
+			pmm.apply(p)
 		if k % 25 == 0:
 			sf_stage_2.show(p)
 	mc_stage_2.recover_low(p)	
+	if args.PYMOL:
+		pmm.apply(p)
 	outf = open("FloppyTail.sc", 'a')
 	pdb_out = "FloppyTail_out_%i.pdb" %i
 	outf.write("%s\t%.3f\t%.3f\n" % (pdb_out, sf_stage_2(p), sfrg(p)))
