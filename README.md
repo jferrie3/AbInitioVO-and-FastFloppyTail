@@ -154,8 +154,8 @@ The input structure mirrors that of _AbInitio_Analysis.py_ described above. Afte
 ### Adding Post-translational Modifications (PTMs)
 Since many IDPs/IDRs contain PTMs, the ability to add PTMs has been confirmed and the two methods of adding PTMS is detailed here:
 	
-* 1)If using a PDB from AbInitioVO as an input via the -inpdb flag and the structure already contains the PTM(s) of interest, nothing additional needs to be done. If the structure does not contain the PTM(s) of interest.  the PTM can be introduced by providing a FASTA modified as described below in addition to the -inpdb input structure.
-* 2)If using the -in flag to use a FASTA as an input (for FastFloppyTail or AbInitioVO) PTMs can be introduced by applying a patch to the sequence through the canonical Rosetta nomenclature. For example, modification of Lys to Acetyl-Lys require replacing "K" with "K[LYS_p:acetylated]" in the input FASTA. The same is true for serine phosphorylation where "S" is replaced with "S[SER_p:phosphorylated]".
+* If using a PDB from AbInitioVO as an input via the -inpdb flag and the structure already contains the PTM(s) of interest, nothing additional needs to be done. If the structure does not contain the PTM(s) of interest.  the PTM can be introduced by providing a FASTA modified as described below in addition to the -inpdb input structure.
+* If using the -in flag to use a FASTA as an input (for FastFloppyTail or AbInitioVO) PTMs can be introduced by applying a patch to the sequence through the canonical Rosetta nomenclature. For example, modification of Lys to Acetyl-Lys require replacing "K" with "K[LYS_p:acetylated]" in the input FASTA. The same is true for serine phosphorylation where "S" is replaced with "S[SER_p:phosphorylated]".
 
 ### Analysis
 Within the _Analysis_Scripts_ directory there are a number of scripts that are capable of compuing a variety of parameters for comparison to experiments. The _README.md_ found inside that directory 
