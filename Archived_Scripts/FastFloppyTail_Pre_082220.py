@@ -27,9 +27,6 @@ import sys
 import os
 import numpy as np
 import argparse
-import re
-import scipy.optimize as op
-from scipy.interpolate import interp1d
 
 # Argument Parsing
 parser = argparse.ArgumentParser(description='Program')
@@ -49,11 +46,10 @@ parser.add_argument('-diso', '--Disorder_Probability_Prediction_File', action='s
 	help='File containing per residue disorder probability prediction in RaptorX format. Generally acquired from RaptorX prediciton.')
 parser.add_argument('-inpdb', '--Input_PDB_File', action='store', type=str, required=False,
 	help='Name of the text file containing the PDB structure of the protein of interest. All residues are required, missing residues are not constructed')
+parser.add_argument('-code', '--Order_Code', action='store', type=str, required=False,
+	help='Single letter code specifying O = ordered, D = disordered, P = partially ordered. If D is supplied, fasta is used, if P is supplied PDB is used')
 parser.add_argument('-pymol', '--PYMOL', action='store_true', required=False,
 	help='Running with this flag will utilize PyMOL Mover for visualization')
-parser.add_argument('-rg', '--RG', action='store', type=float, required=False,
-	help='Ability to provide radius of gyration via Ferrie et. al. JPCB 2020 rg score term')
-
 args = parser.parse_args()
 
 ## Imports from Parser and Defaults
@@ -130,40 +126,17 @@ if args.Disorder_Probability_Prediction_File:
 	else:
 		segment_break_list.append((len(disorder_dat), 'order'))	
 
-# Adding PTMs
-def MakePTMMutations(pose, fasta_sequence):
-	ptm_mutation_list = re.findall("\[(.*?)\]", fasta_sequence)
-	residue_mutation_list = []
-	pose_sequence = pose.sequence()
-	residue_number = 0
-	ptm_number = 0
-	count_residue = True
-	for res in fasta_sequence:
-		if res == '[':
-			count_residue = False
-			residue_mutation_list.append(residue_number)
-		if count_residue == True:
-			residue_number +=1	
-		if res == ']':
-			count_residue = True
-	print(ptm_mutation_list)
-	print(residue_mutation_list)
-	for res_ptm_idx, res_ptm in enumerate(ptm_mutation_list):
-		mutate = MutateResidue(residue_mutation_list[res_ptm_idx], res_ptm)
-		mutate.apply(pose)
-	return pose	
-			
-
 # The Poses
 p=Pose()
 if args.Input_FASTA_File:
 	p = pose_from_sequence(fasta_sequence, "centroid")
 if args.Input_PDB_File:
 	p = pose_from_pdb(str(args.Input_PDB_File))
-	if args.Input_FASTA_File:
-		if p.sequence() != fasta_sequence:
-			if '_p:' in fasta_sequence:
-				p = MakePTMMutations(p, fasta_sequence)
+if args.Order_Code:
+	if args.Order_Code == 'D':
+		p = pose_from_sequence(fasta_sequence, "centroid")
+	if args.Order_Code == 'P':
+		p = pose_from_pdb(str(args.Input_PDB_File))
 
 starting_p = Pose()
 starting_p.assign(p)
@@ -175,11 +148,6 @@ cenmap.set_bb(True)
 fullmap = MoveMap()
 fullmap.set_bb(True)
 fullmap.set_chi(True)
-cenmap_min = MoveMap()
-cenmap_min.set_bb(True)
-fullmap_min = MoveMap()
-fullmap_min.set_bb(True)
-fullmap_min.set_chi(True)
 relaxmap = MoveMap()
 relaxmap.set_bb(True)
 relaxmap.set_chi(True)
@@ -201,74 +169,8 @@ if args.Disorder_Probability_Prediction_File:
 			continue			
 
 # The Score Functions
-# Adding an RG Constraint
-if args.RG:
-	##### Computing the Expected Radius of Gyration
-	rg_b = 0.38 # in nanometers
-	rg_lp = 0.53 # in nanometers
-	gamma = 1.1615
-	seq_N = len(p.sequence())
-	# Solving for scaling from Rg
-	def v_from_pr(var_a):
-		return ((np.sqrt((2*rg_lp*rg_b)/((2*var_a+1)*(2*var_a+2)))*(seq_N**var_a))*10)-args.RG # in Angstroms
-	seq_v0 = 1.0
-	seq_v1 = op.fsolve(v_from_pr, seq_v0)
-	var_g = (gamma-1)/seq_v1
-	var_delta = 1/(1-seq_v1)
-	r_set=np.arange(0.0,7*args.RG,0.01)
-	saw_inputs = (r_set, args.RG, var_g, var_delta)
-	## Concocting the Potential
-	def pr_saw(var_a, input_vars):
-		r, rg, g, delta = input_vars
-		return (var_a[0]*4*np.pi/rg)*((r/rg)**(2+g))*np.exp(-var_a[1]*((r/rg)**delta))
-	
-	def solve_pr_saw(var_a, *input_vars):
-		r, rg, g, delta = input_vars
-		return (np.sum((var_a[0]*4*np.pi/rg)*((r/rg)**(2+g))*np.exp(-var_a[1]*((r/rg)**delta)))-1, np.sum((var_a[0]*4*np.pi/rg)*((r/rg)**(2+g))*np.exp(-var_a[1]*((r/rg)**delta))*(r**2))-rg**2)
-	a0 = [1.0, 1.0]
-	a1 = op.fsolve(solve_pr_saw,a0,args=saw_inputs)
-	rg_sf_term_potential = interp1d(r_set, (1-(pr_saw(a1, saw_inputs)/np.max(pr_saw(a1, saw_inputs)))))
-	
-	## Making the Actual Score Term
-	from pyrosetta.rosetta.core.scoring.methods import ContextIndependentOneBodyEnergy ## newer versions make this pyrosetta.rosetta
-	@pyrosetta.EnergyMethod() ## for newer versions make pyrosetta.EnergyMethod()
-	class SeqCorrRgMethod(WholeStructureEnergy):
-		"""A scoring method that using a predicted radius of gyration from the
-		primary sequence to construct a polymer-scaled potential
-	
-		"""
-		def __init__(self):
-			"""Construct LengthScoreMethod."""
-			WholeStructureEnergy.__init__(self, self.creator())
-	
-		def finalize_total_energy(self, pose, sfxn, emap):
-			"""Calculate energy of res of pose and emap"""
-			pose = pose ## for newer versions remove line
-			e_val = 0
-			r_xyz = np.zeros([seq_N, 3])
-			rg_sq = np.zeros([seq_N, 1])
-			start_res = 1
-			end_res = seq_N
-			
-			for res_num in range(start_res, end_res, 1):
-				for res_xyz in range(len(r_xyz[0])):
-					r_xyz[res_num-start_res][res_xyz] = pose.residue(res_num).nbr_atom_xyz()[res_xyz]
-			r_cen_mass = np.average(r_xyz, axis=0)
-			for res_num in range(len(r_xyz)):
-				rg_sq[res_num] = (np.linalg.norm(r_xyz[res_num] - r_cen_mass))**2
-			rg_val = np.sqrt(np.average(rg_sq))
-			if rg_val < 7*args.RG:
-				e_val = e_val + float(rg_sf_term_potential(rg_val))
-			else:
-				e_val = e_val + float(rg_sf_term_potential(6.9*args.RG))	
-			emap.set(self.scoreType, e_val) ## for newer versions remove .get()
-	
-	new_rg_score = SeqCorrRgMethod.scoreType
-	
 ## VDW Repulsive Score Function
 sf_stage_0 = create_score_function('score0')
-if args.RG:
-	sf_stage_0.set_weight(new_rg_score, (400/24)*5)
 
 ## Centroid Score Functions
 sf_stage_1 = create_score_function('cen_std')
@@ -276,13 +178,9 @@ sf_stage_1.set_weight(rama, 1.0)
 sf_stage_1.set_weight(cenpack, 1.0)
 sf_stage_1.set_weight(hbond_lr_bb, 1.0)
 sf_stage_1.set_weight(hbond_sr_bb, 1.0)
-if args.RG:
-	sf_stage_1.set_weight(new_rg_score, (400/24)*5)
-	
+
 ## Full Atom Score Functions
 sf_stage_2 = create_score_function('ref2015')
-if args.RG:
-	sf_stage_2.set_weight(new_rg_score, (400/24)*500)
 sf_relax = create_score_function('ref2015_cart')
 
 ## Radius of Gyration Reference Score Function
@@ -300,17 +198,17 @@ fragmover3 = ClassicFragmentMover(fragset3, cenmap)
 
 ## Minimization Movers
 vdwmin = MinMover()
-vdwmin.movemap(cenmap_min)
+vdwmin.movemap(cenmap)
 vdwmin.score_function(sf_stage_0)
 vdwmin.min_type('linmin')
 
 cenmin = MinMover()
-cenmin.movemap(cenmap_min)
+cenmin.movemap(cenmap)
 cenmin.score_function(sf_stage_1)
 cenmin.min_type('linmin')
 
 fullmin = MinMover()
-fullmin.movemap(fullmap_min)
+fullmin.movemap(fullmap)
 fullmin.score_function(sf_stage_2)
 fullmin.min_type('linmin')
 
@@ -373,7 +271,7 @@ switch = SwitchResidueTypeSetMover('fa_standard')
 switch_cen = SwitchResidueTypeSetMover('centroid')
 
 ### The Task Operations
-if p.is_centroid() == True:
+if args.Input_FASTA_File or args.Order_Code == 'D':
 	switch.apply(p)
 else:
 	switch_cen.apply(starting_p)
@@ -456,8 +354,6 @@ for i in range(ftnstruct):
 			pmm.apply(p)
 		if j % 50 == 0:
 			sf_stage_1.show(p)
-			if args.RG:
-				print(' Target Rg: ' + str(args.RG) + ' Current Rg: ' + str(sfrg(p)))
 	mc_stage_1.recover_low(p)
 	if args.PYMOL:
 		pmm.apply(p)
@@ -486,8 +382,6 @@ for i in range(ftnstruct):
 			pmm.apply(p)
 		if k % 25 == 0:
 			sf_stage_2.show(p)
-			if args.RG:
-				print(' Target Rg: ' + str(args.RG) + ' Current Rg: ' + str(sfrg(p)))
 	mc_stage_2.recover_low(p)	
 	if args.PYMOL:
 		pmm.apply(p)

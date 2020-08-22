@@ -139,7 +139,9 @@ Note that the same inputs described above are used by the FastFloppyTail algorit
 -relnstruct  --Number_of_Relax_Structures  Number of independent full-atom Relax sampling trajectories from a single AbInitio structure. Default 1
 -diso  --Disorder_Probability_Prediction_File  File containing per residue disorder probability prediction in RaptorX format. Generally acquired from RaptorX prediciton
 -inpdb  --Input_PDB_File  Name of the text file containing the PDB structure of the protein of interest. All residues are required, missing residues are not constructed
--code  --Order_Code  Single letter code specifying O = ordered, D = disordered, P = partially ordered. If D is supplied, fasta is used, if P is supplied PDB is used. NOTE THIS HAS NOT BEEN EXTENSIVELY TESTED.
+-pymol --PYMOL Running with this flag will utilize PyMOL Mover to visualize PyRosetta simulation in real time
+-rg --RG Ability to provide a target radius of gyration via Ferrie et. al. JPBC 2020 rg score term [Note: score term weight for fa-standard portion may not be optimal]
+[REMOVED] -code  --Order_Code  Single letter code specifying O = ordered, D = disordered, P = partially ordered. If D is supplied, fasta is used, if P is supplied PDB is used. NOTE THIS HAS NOT BEEN EXTENSIVELY TESTED.
 ```
 After the initial structure generation is performed using _FastFloppyTail.py_, the loweset energy outputs can be selected using the _FloppyTail_Analysis.py_ script, which automatically selects the 1000 lowest energy conformers.
 
@@ -148,6 +150,13 @@ After the initial structure generation is performed using _FastFloppyTail.py_, t
 The input structure mirrors that of _AbInitio_Analysis.py_ described above. After selecting the 1000 lowest energy structures, they can be further refined using the [FastRelax](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover) algorithm and can be run via the command:
 
 ```run FloppyTail_Relax.py```
+
+### Adding Post-translational Modifications (PTMs)
+Since many IDPs/IDRs contain PTMs, the ability to add PTMs has been confirmed and the two methods of adding PTMS is detailed here:
+####1)If using a PDB from AbInitioVO as an input via the -inpdb flag and the structure already contains the PTM(s) of interest, nothing additional needs to be done. If the structure does not contain the PTM(s) of interest
+####  the PTM can be introduced by providing a FASTA modified as described below in addition to the -inpdb input structure.
+####2)If using the -in flag to use a FASTA as an input (for FastFloppyTail or AbInitioVO) PTMs can be introduced by applying a patch to the sequence through the canonical Rosetta nomenclature. For example, modification of 
+####  Lys to Acetyl-Lys require replacing "K" with "K[LYS_p:acetylated]" in the input FASTA. The same is true for serine phosphorylation where "S" is replaced with "S[SER_p:phosphorylated]".
 
 ### Analysis
 Within the _Analysis_Scripts_ directory there are a number of scripts that are capable of compuing a variety of parameters for comparison to experiments. The _README.md_ found inside that directory 
