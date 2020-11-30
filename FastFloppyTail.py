@@ -187,6 +187,11 @@ if args.Disorder_Probability_Prediction_File:
 	cenmap.set_bb(False)
 	fullmap.set_bb(False)
 	fullmap.set_chi(False)
+	cenmap_min.set_bb(False)
+	fullmap_min.set_bb(False)
+	fullmap_min.set_chi(False)
+	relaxmap.set_bb(False)
+	relaxmap.set_chi(False)
 	for res_seg_idx, res_seg_item in enumerate(segment_break_list):
 		start_res = 1
 		if res_seg_idx > 0:
@@ -197,6 +202,11 @@ if args.Disorder_Probability_Prediction_File:
 				cenmap.set_bb(res_idx, True)
 				fullmap.set_bb(res_idx, True)
 				fullmap.set_chi(res_idx, True)
+				cenmap_min.set_bb(res_idx, True)
+				fullmap_min.set_bb(res_idx, True)
+				fullmap_min.set_chi(res_idx, True)
+				relaxmap.set_bb(res_idx, True)
+				relaxmap.set_chi(res_idx, True)
 		else:
 			continue			
 
