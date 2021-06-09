@@ -1,0 +1,1895 @@
+BLASTP 2.2.26 [Sep-21-2011]
+
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics:
+Schaffer, Alejandro A., L. Aravind, Thomas L. Madden,
+Sergei Shavirin, John L. Spouge, Yuri I. Wolf,  
+Eugene V. Koonin, and Stephen F. Altschul (2001), 
+"Improving the accuracy of PSI-BLAST protein database searches with 
+composition-based statistics and other refinements",  Nucleic Acids Res. 29:2994-3005.
+
+Query= 1HZ6:A|PDBID|CHAIN|SEQUENCE
+         (64 letters)
+
+Database: All non-redundant GenBank CDS
+translations+PDB+SwissProt+PIR+PRF excluding environmental samples
+from WGS projects 
+           183,906,583 sequences; 67,109,518,462 total letters
+
+Searching..................................................done
+
+
+Results from round 1
+
+
+                                                                 Score    E
+Sequences producing significant alignments:                      (bits) Value
+
+pdb|1HZ5|A Chain A, Crystal Structures Of The B1 Domain Of Prote...   110   1e-21
+pdb|1K52|A Chain A, Monomeric Protein L B1 Domain With A K54g Mu...   108   3e-21
+ref|WP_002836096.1| protein L precursor [Finegoldia magna] >gi|2...   108   4e-21
+gb|AAA25612.1| putative protein L precursor [Finegoldia magna]        108   4e-21
+pdb|1K53|A Chain A, Monomeric Protein L B1 Domain With A G15a Mu...   107   7e-21
+pdb|1K51|A Chain A, A G55a Mutation Induces 3d Domain Swapping I...   107   7e-21
+pdb|1JML|A Chain A, Conversion Of Monomeric Protein L To An Obli...   100   1e-18
+pdb|2JZP|A Chain A, NMR solution structure of Kx5Q ProtL mutant       100   2e-18
+pir||A45063 immunoglobulin-binding protein LG - Peptostreptococc...    98   7e-18
+pdb|1K50|A Chain A, A V49a Mutation Induces 3d Domain Swapping I...    96   2e-17
+pdb|2PTL|A Chain A, THREE-DIMENSIONAL SOLUTION STRUCTURE OF AN I...    95   6e-17
+pdb|2KAC|A Chain A, NMR solution structure of KX6E protL mutant        94   1e-16
+gb|AAA67503.1| protein L [Finegoldia magna] >gi|745058|prf||2015...    91   6e-16
+ref|WP_094225182.1| LPXTG cell wall anchor domain-containing pro...    87   1e-14
+pdb|1KH0|A Chain A, Accurate Computer Base Design Of A New Backb...    81   7e-13
+pdb|1XF5|L Chain L, Complex Hcv Core-Fab 19d9d6-Protein L Mutant...    79   5e-12
+pdb|1YMH|E Chain E, Anti-hcv Fab 19d9d6 Complexed With Protein L...    76   3e-11
+pdb|1MHH|E Chain E, Structure of P. magnus protein L mutant boun...    75   4e-11
+pdb|1HEZ|E Chain E, antibody-antigen complex >gi|85543997|pdb|1Y...    73   2e-10
+pdb|1XCQ|L Chain L, Complex Hcv Core-Fab 19d9d6-Protein L Mutant...    73   3e-10
+pdb|6B9Y|E Chain E, Trastuzumab Fab v3 in complex with 5-phenyl ...    72   3e-10
+pdb|4HKZ|E Chain E, Trastuzumab Fab complexed with Protein L and...    72   4e-10
+pdb|4IOI|E Chain E, Meditope-enabled Trastuzumab In Complex With...    72   4e-10
+
+>pdb|1HZ5|A Chain A, Crystal Structures Of The B1 Domain Of Protein L From
+          Peptostreptococcus Magnus, With A Tyrosine To
+          Tryptophan Substitution
+ pdb|1HZ5|B Chain B, Crystal Structures Of The B1 Domain Of Protein L From
+          Peptostreptococcus Magnus, With A Tyrosine To
+          Tryptophan Substitution
+ pdb|1HZ6|A Chain A, Crystal Structures Of The B1 Domain Of Protein L From
+          Peptostreptococcus Magnus With A Tyrosine To Tryptophan
+          Substitution
+ pdb|1HZ6|B Chain B, Crystal Structures Of The B1 Domain Of Protein L From
+          Peptostreptococcus Magnus With A Tyrosine To Tryptophan
+          Substitution
+ pdb|1HZ6|C Chain C, Crystal Structures Of The B1 Domain Of Protein L From
+          Peptostreptococcus Magnus With A Tyrosine To Tryptophan
+          Substitution
+          Length = 72
+
+ Score =  110 bits (275), Expect = 1e-21,   Method: Composition-based stats.
+ Identities = 64/64 (100%), Positives = 64/64 (100%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI
+Sbjct: 9  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 68
+
+Query: 61 KFAG 64
+          KFAG
+Sbjct: 69 KFAG 72
+
+
+>pdb|1K52|A Chain A, Monomeric Protein L B1 Domain With A K54g Mutation
+ pdb|1K52|B Chain B, Monomeric Protein L B1 Domain With A K54g Mutation
+          Length = 72
+
+ Score =  108 bits (271), Expect = 3e-21,   Method: Composition-based stats.
+ Identities = 63/64 (98%), Positives = 63/64 (98%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVAD GYTLNI
+Sbjct: 9  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADGGYTLNI 68
+
+Query: 61 KFAG 64
+          KFAG
+Sbjct: 69 KFAG 72
+
+
+>ref|WP_002836096.1| protein L precursor [Finegoldia magna]
+ gb|EFH93589.1| LPXTG-motif cell wall anchor domain protein [Finegoldia magna ATCC
+           53516]
+          Length = 727
+
+ Score =  108 bits (270), Expect = 4e-21,   Method: Composition-based stats.
+ Identities = 62/63 (98%), Positives = 63/63 (100%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGE+TVDVADKGYTLNIK
+Sbjct: 119 EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEYTVDVADKGYTLNIK 178
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 179 FAG 181
+
+
+
+ Score = 95.5 bits (236), Expect = 3e-17,   Method: Composition-based stats.
+ Identities = 53/61 (86%), Positives = 58/61 (95%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD LKKDNGE+TVDVADKGYTLNIKFA
+Sbjct: 193 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADALKKDNGEYTVDVADKGYTLNIKFA 252
+
+Query: 64  G 64
+           G
+Sbjct: 253 G 253
+
+
+
+ Score = 90.5 bits (223), Expect = 1e-15,   Method: Composition-based stats.
+ Identities = 50/61 (81%), Positives = 57/61 (93%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD L K+NG++TVDVADKGYTLNIKFA
+Sbjct: 265 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADLLAKENGKYTVDVADKGYTLNIKFA 324
+
+Query: 64  G 64
+           G
+Sbjct: 325 G 325
+
+
+
+ Score = 80.5 bits (197), Expect = 1e-12,   Method: Composition-based stats.
+ Identities = 43/61 (70%), Positives = 53/61 (86%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTF +AT+EAY YAD L K+NG++T D+ D GYT+NI+FA
+Sbjct: 337 VTIKANLIYADGKTQTAEFKGTFAEATAEAYRYADLLAKENGKYTADLEDGGYTINIRFA 396
+
+Query: 64  G 64
+           G
+Sbjct: 397 G 397
+
+
+
+ Score = 73.6 bits (179), Expect = 1e-10,   Method: Composition-based stats.
+ Identities = 38/63 (60%), Positives = 51/63 (80%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           E+VTIK N+ F +G+ QTA FKGTF +AT+EAY YAD L K++G++T D+ D GYT+NI+
+Sbjct: 408 EQVTIKENIYFEDGTVQTATFKGTFAEATAEAYRYADLLSKEHGKYTADLEDGGYTINIR 467
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 468 FAG 470
+
+
+>gb|AAA25612.1| putative protein L precursor [Finegoldia magna]
+          Length = 719
+
+ Score =  108 bits (270), Expect = 4e-21,   Method: Composition-based stats.
+ Identities = 62/63 (98%), Positives = 63/63 (100%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGE+TVDVADKGYTLNIK
+Sbjct: 111 EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEYTVDVADKGYTLNIK 170
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 171 FAG 173
+
+
+
+ Score = 95.5 bits (236), Expect = 3e-17,   Method: Composition-based stats.
+ Identities = 53/61 (86%), Positives = 58/61 (95%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD LKKDNGE+TVDVADKGYTLNIKFA
+Sbjct: 185 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADALKKDNGEYTVDVADKGYTLNIKFA 244
+
+Query: 64  G 64
+           G
+Sbjct: 245 G 245
+
+
+
+ Score = 90.5 bits (223), Expect = 1e-15,   Method: Composition-based stats.
+ Identities = 50/61 (81%), Positives = 57/61 (93%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD L K+NG++TVDVADKGYTLNIKFA
+Sbjct: 257 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADLLAKENGKYTVDVADKGYTLNIKFA 316
+
+Query: 64  G 64
+           G
+Sbjct: 317 G 317
+
+
+
+ Score = 80.5 bits (197), Expect = 1e-12,   Method: Composition-based stats.
+ Identities = 43/61 (70%), Positives = 53/61 (86%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTF +AT+EAY YAD L K+NG++T D+ D GYT+NI+FA
+Sbjct: 329 VTIKANLIYADGKTQTAEFKGTFAEATAEAYRYADLLAKENGKYTADLEDGGYTINIRFA 388
+
+Query: 64  G 64
+           G
+Sbjct: 389 G 389
+
+
+
+ Score = 73.6 bits (179), Expect = 1e-10,   Method: Composition-based stats.
+ Identities = 38/63 (60%), Positives = 51/63 (80%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           E+VTIK N+ F +G+ QTA FKGTF +AT+EAY YAD L K++G++T D+ D GYT+NI+
+Sbjct: 400 EQVTIKENIYFEDGTVQTATFKGTFAEATAEAYRYADLLSKEHGKYTADLEDGGYTINIR 459
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 460 FAG 462
+
+
+>pdb|1K53|A Chain A, Monomeric Protein L B1 Domain With A G15a Mutation
+ pdb|1K53|B Chain B, Monomeric Protein L B1 Domain With A G15a Mutation
+          Length = 72
+
+ Score =  107 bits (268), Expect = 7e-21,   Method: Composition-based stats.
+ Identities = 63/64 (98%), Positives = 63/64 (98%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFAN STQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI
+Sbjct: 9  MEEVTIKANLIFANASTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 68
+
+Query: 61 KFAG 64
+          KFAG
+Sbjct: 69 KFAG 72
+
+
+>pdb|1K51|A Chain A, A G55a Mutation Induces 3d Domain Swapping In The B1
+          Domain Of Protein L From Peptostreptococcus Magnus
+          Length = 72
+
+ Score =  107 bits (268), Expect = 7e-21,   Method: Composition-based stats.
+ Identities = 63/64 (98%), Positives = 63/64 (98%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADK YTLNI
+Sbjct: 9  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKAYTLNI 68
+
+Query: 61 KFAG 64
+          KFAG
+Sbjct: 69 KFAG 72
+
+
+>pdb|1JML|A Chain A, Conversion Of Monomeric Protein L To An Obligate Dimer
+          By Computational Protein Design
+          Length = 72
+
+ Score =  100 bits (248), Expect = 1e-18,   Method: Composition-based stats.
+ Identities = 61/64 (95%), Positives = 61/64 (95%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDV  K YTLNI
+Sbjct: 9  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVVPKAYTLNI 68
+
+Query: 61 KFAG 64
+          KFAG
+Sbjct: 69 KFAG 72
+
+
+>pdb|2JZP|A Chain A, NMR solution structure of Kx5Q ProtL mutant
+          Length = 64
+
+ Score = 99.8 bits (247), Expect = 2e-18,   Method: Composition-based stats.
+ Identities = 59/64 (92%), Positives = 64/64 (100%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEF+GTFE+ATSEAYAYADTLK+DNGEWTVDVAD+GYTLNI
+Sbjct: 1  MEEVTIKANLIFANGSTQTAEFQGTFEQATSEAYAYADTLKQDNGEWTVDVADQGYTLNI 60
+
+Query: 61 KFAG 64
+          +FAG
+Sbjct: 61 QFAG 64
+
+
+>pir||A45063 immunoglobulin-binding protein LG - Peptostreptococcus magnus
+ gb|AAA03280.1| protein LG, partial [Finegoldia magna]
+          Length = 455
+
+ Score = 97.8 bits (242), Expect = 7e-18,   Method: Composition-based stats.
+ Identities = 62/63 (98%), Positives = 63/63 (100%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGE+TVDVADKGYTLNIK
+Sbjct: 39  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEYTVDVADKGYTLNIK 98
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 99  FAG 101
+
+
+
+ Score = 86.3 bits (212), Expect = 2e-14,   Method: Composition-based stats.
+ Identities = 53/61 (86%), Positives = 58/61 (95%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD LKKDNGE+TVDVADKGYTLNIKFA
+Sbjct: 113 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADALKKDNGEYTVDVADKGYTLNIKFA 172
+
+Query: 64  G 64
+           G
+Sbjct: 173 G 173
+
+
+
+ Score = 81.6 bits (200), Expect = 6e-13,   Method: Composition-based stats.
+ Identities = 50/61 (81%), Positives = 57/61 (93%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD L K+NG++TVDVADKGYTLNIKFA
+Sbjct: 185 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADLLAKENGKYTVDVADKGYTLNIKFA 244
+
+Query: 64  G 64
+           G
+Sbjct: 245 G 245
+
+
+
+ Score = 72.8 bits (177), Expect = 2e-10,   Method: Composition-based stats.
+ Identities = 43/61 (70%), Positives = 53/61 (86%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTF +AT+EAY YAD L K+NG++T D+ D GYT+NI+FA
+Sbjct: 257 VTIKANLIYADGKTQTAEFKGTFAEATAEAYRYADLLAKENGKYTADLEDGGYTINIRFA 316
+
+Query: 64  G 64
+           G
+Sbjct: 317 G 317
+
+
+>pdb|1K50|A Chain A, A V49a Mutation Induces 3d Domain Swapping In The B1
+          Domain Of Protein L From Peptostreptococcus Magnus
+ pdb|1K50|B Chain B, A V49a Mutation Induces 3d Domain Swapping In The B1
+          Domain Of Protein L From Peptostreptococcus Magnus
+ pdb|1K50|C Chain C, A V49a Mutation Induces 3d Domain Swapping In The B1
+          Domain Of Protein L From Peptostreptococcus Magnus
+ pdb|1K50|D Chain D, A V49a Mutation Induces 3d Domain Swapping In The B1
+          Domain Of Protein L From Peptostreptococcus Magnus
+          Length = 63
+
+ Score = 96.3 bits (238), Expect = 2e-17,   Method: Composition-based stats.
+ Identities = 62/63 (98%), Positives = 62/63 (98%)
+
+Query: 2  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+          EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWT DVADKGYTLNIK
+Sbjct: 1  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTADVADKGYTLNIK 60
+
+Query: 62 FAG 64
+          FAG
+Sbjct: 61 FAG 63
+
+
+>pdb|2PTL|A Chain A, THREE-DIMENSIONAL SOLUTION STRUCTURE OF AN
+          IMMUNOGLOBULIN LIGHT CHAIN-BINDING DOMAIN OF PROTEIN L.
+          COMPARISON WITH THE IGG-BINDING DOMAINS OF PROTEIN G
+          Length = 78
+
+ Score = 94.7 bits (234), Expect = 6e-17,   Method: Composition-based stats.
+ Identities = 62/63 (98%), Positives = 63/63 (100%)
+
+Query: 2  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+          EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGE+TVDVADKGYTLNIK
+Sbjct: 16 EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEYTVDVADKGYTLNIK 75
+
+Query: 62 FAG 64
+          FAG
+Sbjct: 76 FAG 78
+
+
+>pdb|2KAC|A Chain A, NMR solution structure of KX6E protL mutant
+          Length = 64
+
+ Score = 94.0 bits (232), Expect = 1e-16,   Method: Composition-based stats.
+ Identities = 58/64 (90%), Positives = 64/64 (100%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEF+GTFE+ATSEAYAYADTL++DNGEWTVDVAD+GYTLNI
+Sbjct: 1  MEEVTIKANLIFANGSTQTAEFEGTFEEATSEAYAYADTLEEDNGEWTVDVADEGYTLNI 60
+
+Query: 61 KFAG 64
+          +FAG
+Sbjct: 61 EFAG 64
+
+
+>gb|AAA67503.1| protein L [Finegoldia magna]
+ prf||2015385A protein L
+          Length = 992
+
+ Score = 91.3 bits (225), Expect = 6e-16,   Method: Composition-based stats.
+ Identities = 53/61 (86%), Positives = 56/61 (91%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLIFA+GSTQ AEFKGTF KA S+AYAYAD LKKDNGE+TVDVADKG TLNIKFA
+Sbjct: 257 VTIKANLIFADGSTQNAEFKGTFAKAVSDAYAYADALKKDNGEYTVDVADKGLTLNIKFA 316
+
+Query: 64  G 64
+           G
+Sbjct: 317 G 317
+
+
+
+ Score = 81.3 bits (199), Expect = 7e-13,   Method: Composition-based stats.
+ Identities = 46/61 (75%), Positives = 52/61 (85%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIK NLIFA+G TQTAEFKGTFE+AT+EAY YAD L K NGE+T D+ D GYT+NIKFA
+Sbjct: 477 VTIKVNLIFADGKTQTAEFKGTFEEATAEAYRYADLLAKVNGEYTADLEDGGYTINIKFA 536
+
+Query: 64  G 64
+           G
+Sbjct: 537 G 537
+
+
+
+ Score = 80.5 bits (197), Expect = 1e-12,   Method: Composition-based stats.
+ Identities = 45/61 (73%), Positives = 53/61 (86%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIK NLIFA+G TQTAEFKGTFE+AT++AYAYAD L K+NGE+T D+ D G T+NIKFA
+Sbjct: 329 VTIKVNLIFADGKTQTAEFKGTFEEATAKAYAYADLLAKENGEYTADLEDGGNTINIKFA 388
+
+Query: 64  G 64
+           G
+Sbjct: 389 G 389
+
+
+
+ Score = 77.0 bits (188), Expect = 1e-11,   Method: Composition-based stats.
+ Identities = 43/61 (70%), Positives = 52/61 (85%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIK NLIFA+G  QTAEFKGTFE+AT++AYAYA+ L K+NGE+T D+ D G T+NIKFA
+Sbjct: 403 VTIKVNLIFADGKIQTAEFKGTFEEATAKAYAYANLLAKENGEYTADLEDGGNTINIKFA 462
+
+Query: 64  G 64
+           G
+Sbjct: 463 G 463
+
+
+>ref|WP_094225182.1| LPXTG cell wall anchor domain-containing protein [Finegoldia magna]
+ gb|OXZ32126.1| hypothetical protein B9N54_08305 [Finegoldia magna]
+          Length = 1416
+
+ Score = 87.0 bits (214), Expect = 1e-14,   Method: Composition-based stats.
+ Identities = 49/63 (77%), Positives = 55/63 (87%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           EEVTIKANLIFA+G TQTAEFKGTFE+AT+EAY YAD L K NGE+T D+ D GYT+NIK
+Sbjct: 747 EEVTIKANLIFADGKTQTAEFKGTFEEATAEAYRYADLLAKVNGEYTADLEDGGYTINIK 806
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 807 FAG 809
+
+
+
+ Score = 83.6 bits (205), Expect = 1e-13,   Method: Composition-based stats.
+ Identities = 47/61 (77%), Positives = 53/61 (86%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLIFA+G TQTAEFKGTFE+AT+EAY YAD L K NGE+T D+ D GYT+NIKFA
+Sbjct: 552 VTIKANLIFADGKTQTAEFKGTFEEATAEAYRYADLLAKVNGEYTADLEDGGYTINIKFA 611
+
+Query: 64  G 64
+           G
+Sbjct: 612 G 612
+
+
+>pdb|1KH0|A Chain A, Accurate Computer Base Design Of A New Backbone
+          Conformation In The Second Turn Of Protein L
+ pdb|1KH0|B Chain B, Accurate Computer Base Design Of A New Backbone
+          Conformation In The Second Turn Of Protein L
+          Length = 65
+
+ Score = 81.3 bits (199), Expect = 7e-13,   Method: Composition-based stats.
+ Identities = 52/65 (80%), Positives = 54/65 (83%), Gaps = 2/65 (3%)
+
+Query: 2  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVD--VADKGYTLN 59
+          EEVTIKANLIFANGSTQTAEFKGT EKA SE  AYADTLKKDNGEWT+D  V +    LN
+Sbjct: 1  EEVTIKANLIFANGSTQTAEFKGTKEKALSEVLAYADTLKKDNGEWTIDKRVTNGVIILN 60
+
+Query: 60 IKFAG 64
+          IKFAG
+Sbjct: 61 IKFAG 65
+
+
+>pdb|1XF5|L Chain L, Complex Hcv Core-Fab 19d9d6-Protein L Mutant (H74c,
+          Y64w)in Space Group P21212
+ pdb|1XF5|M Chain M, Complex Hcv Core-Fab 19d9d6-Protein L Mutant (H74c,
+          Y64w)in Space Group P21212
+          Length = 80
+
+ Score = 78.6 bits (192), Expect = 5e-12,   Method: Composition-based stats.
+ Identities = 44/61 (72%), Positives = 49/61 (80%)
+
+Query: 4  VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+          VTIK NLIFA+G  QTAEFKGTFE+AT+EAY YAD L K NGEWT D+ D G  +NIKFA
+Sbjct: 19 VTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYADLLAKVNGEWTADLEDGGNCMNIKFA 78
+
+Query: 64 G 64
+          G
+Sbjct: 79 G 79
+
+
+>pdb|1YMH|E Chain E, Anti-hcv Fab 19d9d6 Complexed With Protein L (ppl)
+          Mutant A66w
+ pdb|1YMH|F Chain F, Anti-hcv Fab 19d9d6 Complexed With Protein L (ppl)
+          Mutant A66w
+          Length = 65
+
+ Score = 75.9 bits (185), Expect = 3e-11,   Method: Composition-based stats.
+ Identities = 45/63 (71%), Positives = 51/63 (80%)
+
+Query: 2  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+          EEVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YAD L K NGE+T D+ D G  +NIK
+Sbjct: 2  EEVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYADLLAKVNGEYTWDLEDGGNHMNIK 61
+
+Query: 62 FAG 64
+          FAG
+Sbjct: 62 FAG 64
+
+
+>pdb|1MHH|E Chain E, Structure of P. magnus protein L mutant bound to a mouse
+          Fab
+ pdb|1MHH|F Chain F, Structure of P. magnus protein L mutant bound to a mouse
+          Fab
+          Length = 63
+
+ Score = 75.5 bits (184), Expect = 4e-11,   Method: Composition-based stats.
+ Identities = 44/62 (70%), Positives = 49/62 (79%)
+
+Query: 3  EVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKF 62
+          EVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YA  L K NGEWT D+ D G  +NIKF
+Sbjct: 1  EVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYAALLAKVNGEWTADLEDGGNHMNIKF 60
+
+Query: 63 AG 64
+          AG
+Sbjct: 61 AG 62
+
+
+>pdb|1HEZ|E Chain E, antibody-antigen complex
+ pdb|1YNT|E Chain E, Structure of the monomeric form of T. gondii SAG1
+          surface antigen bound to a human Fab
+          Length = 61
+
+ Score = 73.2 bits (178), Expect = 2e-10,   Method: Composition-based stats.
+ Identities = 43/61 (70%), Positives = 49/61 (80%)
+
+Query: 3  EVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKF 62
+          EVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YAD L K NGE+T D+ D G  +NIKF
+Sbjct: 1  EVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYADLLAKVNGEYTADLEDGGNHMNIKF 60
+
+Query: 63 A 63
+          A
+Sbjct: 61 A 61
+
+
+>pdb|1XCQ|L Chain L, Complex Hcv Core-Fab 19d9d6-Protein L Mutant
+          (D55a,L57h,Y64w) In Space Group P21
+ pdb|1XCQ|M Chain M, Complex Hcv Core-Fab 19d9d6-Protein L Mutant
+          (D55a,L57h,Y64w) In Space Group P21
+ pdb|1XCQ|N Chain N, Complex Hcv Core-Fab 19d9d6-Protein L Mutant
+          (D55a,L57h,Y64w) In Space Group P21
+ pdb|1XCQ|O Chain O, Complex Hcv Core-Fab 19d9d6-Protein L Mutant
+          (D55a,L57h,Y64w) In Space Group P21
+ pdb|1XCT|L Chain L, Complex Hcv Core-Fab 19d9d6-Protein L Mutant (D55a,
+          L57h, Y64w) In Space Group P21212
+ pdb|1XCT|M Chain M, Complex Hcv Core-Fab 19d9d6-Protein L Mutant (D55a,
+          L57h, Y64w) In Space Group P21212
+          Length = 80
+
+ Score = 72.8 bits (177), Expect = 3e-10,   Method: Composition-based stats.
+ Identities = 42/61 (68%), Positives = 47/61 (77%)
+
+Query: 4  VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+          VTIK NLIFA+G  QTAEFKGTFE+AT+EAY YA    K NGEWT D+ D G  +NIKFA
+Sbjct: 19 VTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYAALHAKVNGEWTADLEDGGNHMNIKFA 78
+
+Query: 64 G 64
+          G
+Sbjct: 79 G 79
+
+
+>pdb|6B9Y|E Chain E, Trastuzumab Fab v3 in complex with 5-phenyl meditope
+          variant
+ pdb|6B9Z|E Chain E, Trastuzumab Fab v3
+ pdb|6BAE|E Chain E, Trastuzumab Fab v3 in complex with CQFDLSTRRLKC
+ pdb|6BAH|E Chain E, Trastuzumab Fab v3 with 5-diphenyl meditope variant
+          Length = 64
+
+ Score = 72.4 bits (176), Expect = 3e-10,   Method: Composition-based stats.
+ Identities = 43/62 (69%), Positives = 49/62 (79%)
+
+Query: 3  EVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKF 62
+          EVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YA  L K NGE+T D+ D G  +NIKF
+Sbjct: 3  EVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYAALLAKVNGEYTADLEDGGNHMNIKF 62
+
+Query: 63 AG 64
+          AG
+Sbjct: 63 AG 64
+
+
+>pdb|4HKZ|E Chain E, Trastuzumab Fab complexed with Protein L and Protein A
+          fragments
+ pdb|5U5M|E Chain E, Protein L
+ pdb|5U6A|E Chain E, Protein L
+          Length = 63
+
+ Score = 72.0 bits (175), Expect = 4e-10,   Method: Composition-based stats.
+ Identities = 43/62 (69%), Positives = 49/62 (79%)
+
+Query: 3  EVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKF 62
+          EVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YA  L K NGE+T D+ D G  +NIKF
+Sbjct: 2  EVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYAALLAKVNGEYTADLEDGGNHMNIKF 61
+
+Query: 63 AG 64
+          AG
+Sbjct: 62 AG 63
+
+
+>pdb|4IOI|E Chain E, Meditope-enabled Trastuzumab In Complex With
+          Cqfdlstrrlkc
+ pdb|4HJG|E Chain E, Meditope-enabled Trastuzumab
+ pdb|5U3D|E Chain E, STRUCTURE OF MEDITOPE ENABLED TRASTUZUMAB I83E VARIANT
+ pdb|5U5F|E Chain E, Protein L
+          Length = 65
+
+ Score = 72.0 bits (175), Expect = 4e-10,   Method: Composition-based stats.
+ Identities = 43/62 (69%), Positives = 49/62 (79%)
+
+Query: 3  EVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKF 62
+          EVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YA  L K NGE+T D+ D G  +NIKF
+Sbjct: 4  EVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYAALLAKVNGEYTADLEDGGNHMNIKF 63
+
+Query: 63 AG 64
+          AG
+Sbjct: 64 AG 65
+
+
+Searching..................................................done
+
+
+Results from round 2
+
+
+                                                                 Score    E
+Sequences producing significant alignments:                      (bits) Value
+Sequences used in model and found again:
+
+pdb|1K52|A Chain A, Monomeric Protein L B1 Domain With A K54g Mu...   107   1e-20
+pdb|1HZ5|A Chain A, Crystal Structures Of The B1 Domain Of Prote...   106   2e-20
+ref|WP_002836096.1| protein L precursor [Finegoldia magna] >gi|2...   105   3e-20
+gb|AAA25612.1| putative protein L precursor [Finegoldia magna]        105   4e-20
+pdb|1K51|A Chain A, A G55a Mutation Induces 3d Domain Swapping I...   103   1e-19
+pdb|1K53|A Chain A, Monomeric Protein L B1 Domain With A G15a Mu...   103   1e-19
+ref|WP_094225182.1| LPXTG cell wall anchor domain-containing pro...    99   3e-18
+pdb|2JZP|A Chain A, NMR solution structure of Kx5Q ProtL mutant        96   2e-17
+pdb|1JML|A Chain A, Conversion Of Monomeric Protein L To An Obli...    96   2e-17
+pir||A45063 immunoglobulin-binding protein LG - Peptostreptococc...    95   5e-17
+pdb|1YMH|E Chain E, Anti-hcv Fab 19d9d6 Complexed With Protein L...    95   6e-17
+pdb|1XF5|L Chain L, Complex Hcv Core-Fab 19d9d6-Protein L Mutant...    94   7e-17
+gb|AAA67503.1| protein L [Finegoldia magna] >gi|745058|prf||2015...    94   1e-16
+pdb|1K50|A Chain A, A V49a Mutation Induces 3d Domain Swapping I...    93   2e-16
+pdb|2PTL|A Chain A, THREE-DIMENSIONAL SOLUTION STRUCTURE OF AN I...    91   6e-16
+pdb|1MHH|E Chain E, Structure of P. magnus protein L mutant boun...    90   1e-15
+pdb|2KAC|A Chain A, NMR solution structure of KX6E protL mutant        90   1e-15
+pdb|1HEZ|E Chain E, antibody-antigen complex >gi|85543997|pdb|1Y...    89   3e-15
+pdb|1XCQ|L Chain L, Complex Hcv Core-Fab 19d9d6-Protein L Mutant...    89   4e-15
+pdb|4IOI|E Chain E, Meditope-enabled Trastuzumab In Complex With...    89   5e-15
+pdb|6B9Y|E Chain E, Trastuzumab Fab v3 in complex with 5-phenyl ...    88   5e-15
+pdb|4HKZ|E Chain E, Trastuzumab Fab complexed with Protein L and...    88   5e-15
+pdb|1KH0|A Chain A, Accurate Computer Base Design Of A New Backb...    86   2e-14
+
+Sequences not found previously or not previously below threshold:
+
+
+CONVERGED!
+>pdb|1K52|A Chain A, Monomeric Protein L B1 Domain With A K54g Mutation
+ pdb|1K52|B Chain B, Monomeric Protein L B1 Domain With A K54g Mutation
+          Length = 72
+
+ Score =  107 bits (267), Expect = 1e-20,   Method: Composition-based stats.
+ Identities = 63/64 (98%), Positives = 63/64 (98%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVAD GYTLNI
+Sbjct: 9  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADGGYTLNI 68
+
+Query: 61 KFAG 64
+          KFAG
+Sbjct: 69 KFAG 72
+
+
+>pdb|1HZ5|A Chain A, Crystal Structures Of The B1 Domain Of Protein L From
+          Peptostreptococcus Magnus, With A Tyrosine To
+          Tryptophan Substitution
+ pdb|1HZ5|B Chain B, Crystal Structures Of The B1 Domain Of Protein L From
+          Peptostreptococcus Magnus, With A Tyrosine To
+          Tryptophan Substitution
+ pdb|1HZ6|A Chain A, Crystal Structures Of The B1 Domain Of Protein L From
+          Peptostreptococcus Magnus With A Tyrosine To Tryptophan
+          Substitution
+ pdb|1HZ6|B Chain B, Crystal Structures Of The B1 Domain Of Protein L From
+          Peptostreptococcus Magnus With A Tyrosine To Tryptophan
+          Substitution
+ pdb|1HZ6|C Chain C, Crystal Structures Of The B1 Domain Of Protein L From
+          Peptostreptococcus Magnus With A Tyrosine To Tryptophan
+          Substitution
+          Length = 72
+
+ Score =  106 bits (264), Expect = 2e-20,   Method: Composition-based stats.
+ Identities = 64/64 (100%), Positives = 64/64 (100%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI
+Sbjct: 9  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 68
+
+Query: 61 KFAG 64
+          KFAG
+Sbjct: 69 KFAG 72
+
+
+>ref|WP_002836096.1| protein L precursor [Finegoldia magna]
+ gb|EFH93589.1| LPXTG-motif cell wall anchor domain protein [Finegoldia magna ATCC
+           53516]
+          Length = 727
+
+ Score =  105 bits (262), Expect = 3e-20,   Method: Composition-based stats.
+ Identities = 62/63 (98%), Positives = 63/63 (100%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGE+TVDVADKGYTLNIK
+Sbjct: 119 EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEYTVDVADKGYTLNIK 178
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 179 FAG 181
+
+
+
+ Score = 99.4 bits (246), Expect = 3e-18,   Method: Composition-based stats.
+ Identities = 53/61 (86%), Positives = 58/61 (95%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD LKKDNGE+TVDVADKGYTLNIKFA
+Sbjct: 193 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADALKKDNGEYTVDVADKGYTLNIKFA 252
+
+Query: 64  G 64
+           G
+Sbjct: 253 G 253
+
+
+
+ Score = 95.9 bits (237), Expect = 2e-17,   Method: Composition-based stats.
+ Identities = 50/61 (81%), Positives = 57/61 (93%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD L K+NG++TVDVADKGYTLNIKFA
+Sbjct: 265 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADLLAKENGKYTVDVADKGYTLNIKFA 324
+
+Query: 64  G 64
+           G
+Sbjct: 325 G 325
+
+
+
+ Score = 93.2 bits (230), Expect = 2e-16,   Method: Composition-based stats.
+ Identities = 43/61 (70%), Positives = 53/61 (86%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTF +AT+EAY YAD L K+NG++T D+ D GYT+NI+FA
+Sbjct: 337 VTIKANLIYADGKTQTAEFKGTFAEATAEAYRYADLLAKENGKYTADLEDGGYTINIRFA 396
+
+Query: 64  G 64
+           G
+Sbjct: 397 G 397
+
+
+
+ Score = 84.3 bits (207), Expect = 9e-14,   Method: Composition-based stats.
+ Identities = 38/63 (60%), Positives = 51/63 (80%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           E+VTIK N+ F +G+ QTA FKGTF +AT+EAY YAD L K++G++T D+ D GYT+NI+
+Sbjct: 408 EQVTIKENIYFEDGTVQTATFKGTFAEATAEAYRYADLLSKEHGKYTADLEDGGYTINIR 467
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 468 FAG 470
+
+
+>gb|AAA25612.1| putative protein L precursor [Finegoldia magna]
+          Length = 719
+
+ Score =  105 bits (261), Expect = 4e-20,   Method: Composition-based stats.
+ Identities = 62/63 (98%), Positives = 63/63 (100%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGE+TVDVADKGYTLNIK
+Sbjct: 111 EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEYTVDVADKGYTLNIK 170
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 171 FAG 173
+
+
+
+ Score = 99.0 bits (245), Expect = 3e-18,   Method: Composition-based stats.
+ Identities = 53/61 (86%), Positives = 58/61 (95%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD LKKDNGE+TVDVADKGYTLNIKFA
+Sbjct: 185 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADALKKDNGEYTVDVADKGYTLNIKFA 244
+
+Query: 64  G 64
+           G
+Sbjct: 245 G 245
+
+
+
+ Score = 95.9 bits (237), Expect = 3e-17,   Method: Composition-based stats.
+ Identities = 50/61 (81%), Positives = 57/61 (93%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD L K+NG++TVDVADKGYTLNIKFA
+Sbjct: 257 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADLLAKENGKYTVDVADKGYTLNIKFA 316
+
+Query: 64  G 64
+           G
+Sbjct: 317 G 317
+
+
+
+ Score = 92.8 bits (229), Expect = 2e-16,   Method: Composition-based stats.
+ Identities = 43/61 (70%), Positives = 53/61 (86%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTF +AT+EAY YAD L K+NG++T D+ D GYT+NI+FA
+Sbjct: 329 VTIKANLIYADGKTQTAEFKGTFAEATAEAYRYADLLAKENGKYTADLEDGGYTINIRFA 388
+
+Query: 64  G 64
+           G
+Sbjct: 389 G 389
+
+
+
+ Score = 83.9 bits (206), Expect = 1e-13,   Method: Composition-based stats.
+ Identities = 38/63 (60%), Positives = 51/63 (80%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           E+VTIK N+ F +G+ QTA FKGTF +AT+EAY YAD L K++G++T D+ D GYT+NI+
+Sbjct: 400 EQVTIKENIYFEDGTVQTATFKGTFAEATAEAYRYADLLSKEHGKYTADLEDGGYTINIR 459
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 460 FAG 462
+
+
+>pdb|1K51|A Chain A, A G55a Mutation Induces 3d Domain Swapping In The B1
+          Domain Of Protein L From Peptostreptococcus Magnus
+          Length = 72
+
+ Score =  103 bits (258), Expect = 1e-19,   Method: Composition-based stats.
+ Identities = 63/64 (98%), Positives = 63/64 (98%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADK YTLNI
+Sbjct: 9  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKAYTLNI 68
+
+Query: 61 KFAG 64
+          KFAG
+Sbjct: 69 KFAG 72
+
+
+>pdb|1K53|A Chain A, Monomeric Protein L B1 Domain With A G15a Mutation
+ pdb|1K53|B Chain B, Monomeric Protein L B1 Domain With A G15a Mutation
+          Length = 72
+
+ Score =  103 bits (257), Expect = 1e-19,   Method: Composition-based stats.
+ Identities = 63/64 (98%), Positives = 63/64 (98%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFAN STQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI
+Sbjct: 9  MEEVTIKANLIFANASTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 68
+
+Query: 61 KFAG 64
+          KFAG
+Sbjct: 69 KFAG 72
+
+
+>ref|WP_094225182.1| LPXTG cell wall anchor domain-containing protein [Finegoldia magna]
+ gb|OXZ32126.1| hypothetical protein B9N54_08305 [Finegoldia magna]
+          Length = 1416
+
+ Score = 99.0 bits (245), Expect = 3e-18,   Method: Composition-based stats.
+ Identities = 49/63 (77%), Positives = 55/63 (87%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           EEVTIKANLIFA+G TQTAEFKGTFE+AT+EAY YAD L K NGE+T D+ D GYT+NIK
+Sbjct: 747 EEVTIKANLIFADGKTQTAEFKGTFEEATAEAYRYADLLAKVNGEYTADLEDGGYTINIK 806
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 807 FAG 809
+
+
+
+ Score = 95.5 bits (236), Expect = 3e-17,   Method: Composition-based stats.
+ Identities = 47/61 (77%), Positives = 53/61 (86%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLIFA+G TQTAEFKGTFE+AT+EAY YAD L K NGE+T D+ D GYT+NIKFA
+Sbjct: 552 VTIKANLIFADGKTQTAEFKGTFEEATAEAYRYADLLAKVNGEYTADLEDGGYTINIKFA 611
+
+Query: 64  G 64
+           G
+Sbjct: 612 G 612
+
+
+>pdb|2JZP|A Chain A, NMR solution structure of Kx5Q ProtL mutant
+          Length = 64
+
+ Score = 96.3 bits (238), Expect = 2e-17,   Method: Composition-based stats.
+ Identities = 59/64 (92%), Positives = 64/64 (100%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEF+GTFE+ATSEAYAYADTLK+DNGEWTVDVAD+GYTLNI
+Sbjct: 1  MEEVTIKANLIFANGSTQTAEFQGTFEQATSEAYAYADTLKQDNGEWTVDVADQGYTLNI 60
+
+Query: 61 KFAG 64
+          +FAG
+Sbjct: 61 QFAG 64
+
+
+>pdb|1JML|A Chain A, Conversion Of Monomeric Protein L To An Obligate Dimer
+          By Computational Protein Design
+          Length = 72
+
+ Score = 96.3 bits (238), Expect = 2e-17,   Method: Composition-based stats.
+ Identities = 61/64 (95%), Positives = 61/64 (95%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDV  K YTLNI
+Sbjct: 9  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVVPKAYTLNI 68
+
+Query: 61 KFAG 64
+          KFAG
+Sbjct: 69 KFAG 72
+
+
+>pir||A45063 immunoglobulin-binding protein LG - Peptostreptococcus magnus
+ gb|AAA03280.1| protein LG, partial [Finegoldia magna]
+          Length = 455
+
+ Score = 94.7 bits (234), Expect = 5e-17,   Method: Composition-based stats.
+ Identities = 62/63 (98%), Positives = 63/63 (100%)
+
+Query: 2   EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+           EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGE+TVDVADKGYTLNIK
+Sbjct: 39  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEYTVDVADKGYTLNIK 98
+
+Query: 62  FAG 64
+           FAG
+Sbjct: 99  FAG 101
+
+
+
+ Score = 89.3 bits (220), Expect = 3e-15,   Method: Composition-based stats.
+ Identities = 53/61 (86%), Positives = 58/61 (95%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD LKKDNGE+TVDVADKGYTLNIKFA
+Sbjct: 113 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADALKKDNGEYTVDVADKGYTLNIKFA 172
+
+Query: 64  G 64
+           G
+Sbjct: 173 G 173
+
+
+
+ Score = 86.6 bits (213), Expect = 2e-14,   Method: Composition-based stats.
+ Identities = 50/61 (81%), Positives = 57/61 (93%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTFE+AT+EAY YAD L K+NG++TVDVADKGYTLNIKFA
+Sbjct: 185 VTIKANLIYADGKTQTAEFKGTFEEATAEAYRYADLLAKENGKYTVDVADKGYTLNIKFA 244
+
+Query: 64  G 64
+           G
+Sbjct: 245 G 245
+
+
+
+ Score = 83.9 bits (206), Expect = 1e-13,   Method: Composition-based stats.
+ Identities = 43/61 (70%), Positives = 53/61 (86%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLI+A+G TQTAEFKGTF +AT+EAY YAD L K+NG++T D+ D GYT+NI+FA
+Sbjct: 257 VTIKANLIYADGKTQTAEFKGTFAEATAEAYRYADLLAKENGKYTADLEDGGYTINIRFA 316
+
+Query: 64  G 64
+           G
+Sbjct: 317 G 317
+
+
+>pdb|1YMH|E Chain E, Anti-hcv Fab 19d9d6 Complexed With Protein L (ppl)
+          Mutant A66w
+ pdb|1YMH|F Chain F, Anti-hcv Fab 19d9d6 Complexed With Protein L (ppl)
+          Mutant A66w
+          Length = 65
+
+ Score = 94.7 bits (234), Expect = 6e-17,   Method: Composition-based stats.
+ Identities = 45/63 (71%), Positives = 51/63 (80%)
+
+Query: 2  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+          EEVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YAD L K NGE+T D+ D G  +NIK
+Sbjct: 2  EEVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYADLLAKVNGEYTWDLEDGGNHMNIK 61
+
+Query: 62 FAG 64
+          FAG
+Sbjct: 62 FAG 64
+
+
+>pdb|1XF5|L Chain L, Complex Hcv Core-Fab 19d9d6-Protein L Mutant (H74c,
+          Y64w)in Space Group P21212
+ pdb|1XF5|M Chain M, Complex Hcv Core-Fab 19d9d6-Protein L Mutant (H74c,
+          Y64w)in Space Group P21212
+          Length = 80
+
+ Score = 94.3 bits (233), Expect = 7e-17,   Method: Composition-based stats.
+ Identities = 44/61 (72%), Positives = 49/61 (80%)
+
+Query: 4  VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+          VTIK NLIFA+G  QTAEFKGTFE+AT+EAY YAD L K NGEWT D+ D G  +NIKFA
+Sbjct: 19 VTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYADLLAKVNGEWTADLEDGGNCMNIKFA 78
+
+Query: 64 G 64
+          G
+Sbjct: 79 G 79
+
+
+>gb|AAA67503.1| protein L [Finegoldia magna]
+ prf||2015385A protein L
+          Length = 992
+
+ Score = 94.0 bits (232), Expect = 1e-16,   Method: Composition-based stats.
+ Identities = 46/61 (75%), Positives = 52/61 (85%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIK NLIFA+G TQTAEFKGTFE+AT+EAY YAD L K NGE+T D+ D GYT+NIKFA
+Sbjct: 477 VTIKVNLIFADGKTQTAEFKGTFEEATAEAYRYADLLAKVNGEYTADLEDGGYTINIKFA 536
+
+Query: 64  G 64
+           G
+Sbjct: 537 G 537
+
+
+
+ Score = 91.6 bits (226), Expect = 5e-16,   Method: Composition-based stats.
+ Identities = 53/61 (86%), Positives = 56/61 (91%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIKANLIFA+GSTQ AEFKGTF KA S+AYAYAD LKKDNGE+TVDVADKG TLNIKFA
+Sbjct: 257 VTIKANLIFADGSTQNAEFKGTFAKAVSDAYAYADALKKDNGEYTVDVADKGLTLNIKFA 316
+
+Query: 64  G 64
+           G
+Sbjct: 317 G 317
+
+
+
+ Score = 91.6 bits (226), Expect = 6e-16,   Method: Composition-based stats.
+ Identities = 45/61 (73%), Positives = 53/61 (86%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIK NLIFA+G TQTAEFKGTFE+AT++AYAYAD L K+NGE+T D+ D G T+NIKFA
+Sbjct: 329 VTIKVNLIFADGKTQTAEFKGTFEEATAKAYAYADLLAKENGEYTADLEDGGNTINIKFA 388
+
+Query: 64  G 64
+           G
+Sbjct: 389 G 389
+
+
+
+ Score = 88.9 bits (219), Expect = 3e-15,   Method: Composition-based stats.
+ Identities = 43/61 (70%), Positives = 52/61 (85%)
+
+Query: 4   VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+           VTIK NLIFA+G  QTAEFKGTFE+AT++AYAYA+ L K+NGE+T D+ D G T+NIKFA
+Sbjct: 403 VTIKVNLIFADGKIQTAEFKGTFEEATAKAYAYANLLAKENGEYTADLEDGGNTINIKFA 462
+
+Query: 64  G 64
+           G
+Sbjct: 463 G 463
+
+
+>pdb|1K50|A Chain A, A V49a Mutation Induces 3d Domain Swapping In The B1
+          Domain Of Protein L From Peptostreptococcus Magnus
+ pdb|1K50|B Chain B, A V49a Mutation Induces 3d Domain Swapping In The B1
+          Domain Of Protein L From Peptostreptococcus Magnus
+ pdb|1K50|C Chain C, A V49a Mutation Induces 3d Domain Swapping In The B1
+          Domain Of Protein L From Peptostreptococcus Magnus
+ pdb|1K50|D Chain D, A V49a Mutation Induces 3d Domain Swapping In The B1
+          Domain Of Protein L From Peptostreptococcus Magnus
+          Length = 63
+
+ Score = 93.2 bits (230), Expect = 2e-16,   Method: Composition-based stats.
+ Identities = 62/63 (98%), Positives = 62/63 (98%)
+
+Query: 2  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+          EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWT DVADKGYTLNIK
+Sbjct: 1  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTADVADKGYTLNIK 60
+
+Query: 62 FAG 64
+          FAG
+Sbjct: 61 FAG 63
+
+
+>pdb|2PTL|A Chain A, THREE-DIMENSIONAL SOLUTION STRUCTURE OF AN
+          IMMUNOGLOBULIN LIGHT CHAIN-BINDING DOMAIN OF PROTEIN L.
+          COMPARISON WITH THE IGG-BINDING DOMAINS OF PROTEIN G
+          Length = 78
+
+ Score = 91.3 bits (225), Expect = 6e-16,   Method: Composition-based stats.
+ Identities = 62/63 (98%), Positives = 63/63 (100%)
+
+Query: 2  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIK 61
+          EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGE+TVDVADKGYTLNIK
+Sbjct: 16 EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEYTVDVADKGYTLNIK 75
+
+Query: 62 FAG 64
+          FAG
+Sbjct: 76 FAG 78
+
+
+>pdb|1MHH|E Chain E, Structure of P. magnus protein L mutant bound to a mouse
+          Fab
+ pdb|1MHH|F Chain F, Structure of P. magnus protein L mutant bound to a mouse
+          Fab
+          Length = 63
+
+ Score = 90.5 bits (223), Expect = 1e-15,   Method: Composition-based stats.
+ Identities = 44/62 (70%), Positives = 49/62 (79%)
+
+Query: 3  EVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKF 62
+          EVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YA  L K NGEWT D+ D G  +NIKF
+Sbjct: 1  EVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYAALLAKVNGEWTADLEDGGNHMNIKF 60
+
+Query: 63 AG 64
+          AG
+Sbjct: 61 AG 62
+
+
+>pdb|2KAC|A Chain A, NMR solution structure of KX6E protL mutant
+          Length = 64
+
+ Score = 90.1 bits (222), Expect = 1e-15,   Method: Composition-based stats.
+ Identities = 58/64 (90%), Positives = 64/64 (100%)
+
+Query: 1  MEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNI 60
+          MEEVTIKANLIFANGSTQTAEF+GTFE+ATSEAYAYADTL++DNGEWTVDVAD+GYTLNI
+Sbjct: 1  MEEVTIKANLIFANGSTQTAEFEGTFEEATSEAYAYADTLEEDNGEWTVDVADEGYTLNI 60
+
+Query: 61 KFAG 64
+          +FAG
+Sbjct: 61 EFAG 64
+
+
+>pdb|1HEZ|E Chain E, antibody-antigen complex
+ pdb|1YNT|E Chain E, Structure of the monomeric form of T. gondii SAG1
+          surface antigen bound to a human Fab
+          Length = 61
+
+ Score = 88.9 bits (219), Expect = 3e-15,   Method: Composition-based stats.
+ Identities = 43/61 (70%), Positives = 49/61 (80%)
+
+Query: 3  EVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKF 62
+          EVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YAD L K NGE+T D+ D G  +NIKF
+Sbjct: 1  EVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYADLLAKVNGEYTADLEDGGNHMNIKF 60
+
+Query: 63 A 63
+          A
+Sbjct: 61 A 61
+
+
+>pdb|1XCQ|L Chain L, Complex Hcv Core-Fab 19d9d6-Protein L Mutant
+          (D55a,L57h,Y64w) In Space Group P21
+ pdb|1XCQ|M Chain M, Complex Hcv Core-Fab 19d9d6-Protein L Mutant
+          (D55a,L57h,Y64w) In Space Group P21
+ pdb|1XCQ|N Chain N, Complex Hcv Core-Fab 19d9d6-Protein L Mutant
+          (D55a,L57h,Y64w) In Space Group P21
+ pdb|1XCQ|O Chain O, Complex Hcv Core-Fab 19d9d6-Protein L Mutant
+          (D55a,L57h,Y64w) In Space Group P21
+ pdb|1XCT|L Chain L, Complex Hcv Core-Fab 19d9d6-Protein L Mutant (D55a,
+          L57h, Y64w) In Space Group P21212
+ pdb|1XCT|M Chain M, Complex Hcv Core-Fab 19d9d6-Protein L Mutant (D55a,
+          L57h, Y64w) In Space Group P21212
+          Length = 80
+
+ Score = 88.6 bits (218), Expect = 4e-15,   Method: Composition-based stats.
+ Identities = 42/61 (68%), Positives = 47/61 (77%)
+
+Query: 4  VTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKFA 63
+          VTIK NLIFA+G  QTAEFKGTFE+AT+EAY YA    K NGEWT D+ D G  +NIKFA
+Sbjct: 19 VTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYAALHAKVNGEWTADLEDGGNHMNIKFA 78
+
+Query: 64 G 64
+          G
+Sbjct: 79 G 79
+
+
+>pdb|4IOI|E Chain E, Meditope-enabled Trastuzumab In Complex With
+          Cqfdlstrrlkc
+ pdb|4HJG|E Chain E, Meditope-enabled Trastuzumab
+ pdb|5U3D|E Chain E, STRUCTURE OF MEDITOPE ENABLED TRASTUZUMAB I83E VARIANT
+ pdb|5U5F|E Chain E, Protein L
+          Length = 65
+
+ Score = 88.6 bits (218), Expect = 5e-15,   Method: Composition-based stats.
+ Identities = 43/62 (69%), Positives = 49/62 (79%)
+
+Query: 3  EVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKF 62
+          EVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YA  L K NGE+T D+ D G  +NIKF
+Sbjct: 4  EVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYAALLAKVNGEYTADLEDGGNHMNIKF 63
+
+Query: 63 AG 64
+          AG
+Sbjct: 64 AG 65
+
+
+>pdb|6B9Y|E Chain E, Trastuzumab Fab v3 in complex with 5-phenyl meditope
+          variant
+ pdb|6B9Z|E Chain E, Trastuzumab Fab v3
+ pdb|6BAE|E Chain E, Trastuzumab Fab v3 in complex with CQFDLSTRRLKC
+ pdb|6BAH|E Chain E, Trastuzumab Fab v3 with 5-diphenyl meditope variant
+          Length = 64
+
+ Score = 88.2 bits (217), Expect = 5e-15,   Method: Composition-based stats.
+ Identities = 43/62 (69%), Positives = 49/62 (79%)
+
+Query: 3  EVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKF 62
+          EVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YA  L K NGE+T D+ D G  +NIKF
+Sbjct: 3  EVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYAALLAKVNGEYTADLEDGGNHMNIKF 62
+
+Query: 63 AG 64
+          AG
+Sbjct: 63 AG 64
+
+
+>pdb|4HKZ|E Chain E, Trastuzumab Fab complexed with Protein L and Protein A
+          fragments
+ pdb|5U5M|E Chain E, Protein L
+ pdb|5U6A|E Chain E, Protein L
+          Length = 63
+
+ Score = 88.2 bits (217), Expect = 5e-15,   Method: Composition-based stats.
+ Identities = 43/62 (69%), Positives = 49/62 (79%)
+
+Query: 3  EVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVDVADKGYTLNIKF 62
+          EVTIK NLIFA+G  QTAEFKGTFE+AT+EAY YA  L K NGE+T D+ D G  +NIKF
+Sbjct: 2  EVTIKVNLIFADGKIQTAEFKGTFEEATAEAYRYAALLAKVNGEYTADLEDGGNHMNIKF 61
+
+Query: 63 AG 64
+          AG
+Sbjct: 62 AG 63
+
+
+>pdb|1KH0|A Chain A, Accurate Computer Base Design Of A New Backbone
+          Conformation In The Second Turn Of Protein L
+ pdb|1KH0|B Chain B, Accurate Computer Base Design Of A New Backbone
+          Conformation In The Second Turn Of Protein L
+          Length = 65
+
+ Score = 86.3 bits (212), Expect = 2e-14,   Method: Composition-based stats.
+ Identities = 52/65 (80%), Positives = 54/65 (83%), Gaps = 2/65 (3%)
+
+Query: 2  EEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEWTVD--VADKGYTLN 59
+          EEVTIKANLIFANGSTQTAEFKGT EKA SE  AYADTLKKDNGEWT+D  V +    LN
+Sbjct: 1  EEVTIKANLIFANGSTQTAEFKGTKEKALSEVLAYADTLKKDNGEWTIDKRVTNGVIILN 60
+
+Query: 60 IKFAG 64
+          IKFAG
+Sbjct: 61 IKFAG 65
+
+
+  Database: All non-redundant GenBank CDS
+  translations+PDB+SwissProt+PIR+PRF excluding environmental samples
+  from WGS projects
+    Posted date:  Dec 29, 2018  2:14 AM
+  Number of letters in database: 67,109,518,462
+  Number of sequences in database:  183,906,583
+  
+  Database: /mnt/e/Blast/nr.01
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 561,981,255
+  Number of sequences in database:  1,670,069
+  
+  Database: /mnt/e/Blast/nr.02
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 201,662,000
+  Number of sequences in database:  614,473
+  
+  Database: /mnt/e/Blast/nr.03
+    Posted date:  Dec 29, 2018  8:18 AM
+  Number of letters in database: 219,965,801
+  Number of sequences in database:  689,557
+  
+  Database: /mnt/e/Blast/nr.04
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 460,008,476
+  Number of sequences in database:  1,332,566
+  
+  Database: /mnt/e/Blast/nr.05
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 379,653,981
+  Number of sequences in database:  1,137,573
+  
+  Database: /mnt/e/Blast/nr.06
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 416,831,542
+  Number of sequences in database:  1,287,721
+  
+  Database: /mnt/e/Blast/nr.07
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 760,881,848
+  Number of sequences in database:  2,259,845
+  
+  Database: /mnt/e/Blast/nr.08
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 24,625,346
+  Number of sequences in database:  74,409
+  
+  Database: /mnt/e/Blast/nr.09
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 924,917,580
+  Number of sequences in database:  2,644,924
+  
+  Database: /mnt/e/Blast/nr.100
+    Posted date:  Dec 29, 2018  8:19 AM
+  Number of letters in database: 47,894,172
+  Number of sequences in database:  143,519
+  
+  Database: /mnt/e/Blast/nr.101
+    Posted date:  Dec 29, 2018  8:19 AM
+  Number of letters in database: 732,988,994
+  Number of sequences in database:  1,913,162
+  
+  Database: /mnt/e/Blast/nr.102
+    Posted date:  Dec 29, 2018  8:19 AM
+  Number of letters in database: 271,353,787
+  Number of sequences in database:  682,591
+  
+  Database: /mnt/e/Blast/nr.103
+    Posted date:  Dec 29, 2018  8:19 AM
+  Number of letters in database: 411,279,815
+  Number of sequences in database:  1,177,286
+  
+  Database: /mnt/e/Blast/nr.104
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 990,880,714
+  Number of sequences in database:  2,669,454
+  
+  Database: /mnt/e/Blast/nr.105
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 996,253,743
+  Number of sequences in database:  2,849,762
+  
+  Database: /mnt/e/Blast/nr.106
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 993,100,782
+  Number of sequences in database:  2,612,679
+  
+  Database: /mnt/e/Blast/nr.107
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 995,101,720
+  Number of sequences in database:  2,626,799
+  
+  Database: /mnt/e/Blast/nr.108
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 994,832,592
+  Number of sequences in database:  2,849,125
+  
+  Database: /mnt/e/Blast/nr.109
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 580,084,631
+  Number of sequences in database:  1,570,376
+  
+  Database: /mnt/e/Blast/nr.10
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 837,796,403
+  Number of sequences in database:  2,272,711
+  
+  Database: /mnt/e/Blast/nr.11
+    Posted date:  Dec 29, 2018  8:19 AM
+  Number of letters in database: 773,899,601
+  Number of sequences in database:  2,319,499
+  
+  Database: /mnt/e/Blast/nr.12
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 851,530,672
+  Number of sequences in database:  2,387,892
+  
+  Database: /mnt/e/Blast/nr.13
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 794,728,605
+  Number of sequences in database:  2,093,039
+  
+  Database: /mnt/e/Blast/nr.14
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 745,929,529
+  Number of sequences in database:  2,013,036
+  
+  Database: /mnt/e/Blast/nr.15
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 102,844,912
+  Number of sequences in database:  273,010
+  
+  Database: /mnt/e/Blast/nr.16
+    Posted date:  Dec 29, 2018  8:19 AM
+  Number of letters in database: 574,431,280
+  Number of sequences in database:  1,461,894
+  
+  Database: /mnt/e/Blast/nr.17
+    Posted date:  Dec 29, 2018  8:19 AM
+  Number of letters in database: 90,763,404
+  Number of sequences in database:  198,986
+  
+  Database: /mnt/e/Blast/nr.18
+    Posted date:  Dec 29, 2018  8:19 AM
+  Number of letters in database: 2,940,499
+  Number of sequences in database:  9167
+  
+  Database: /mnt/e/Blast/nr.19
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 37,008,936
+  Number of sequences in database:  111,282
+  
+  Database: /mnt/e/Blast/nr.20
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 274,820,387
+  Number of sequences in database:  755,997
+  
+  Database: /mnt/e/Blast/nr.21
+    Posted date:  Dec 29, 2018  10:37 AM
+  Number of letters in database: 308,671,027
+  Number of sequences in database:  913,426
+  
+  Database: /mnt/e/Blast/nr.22
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 778,647,060
+  Number of sequences in database:  2,248,566
+  
+  Database: /mnt/e/Blast/nr.23
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 780,661,492
+  Number of sequences in database:  2,213,981
+  
+  Database: /mnt/e/Blast/nr.24
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 787,965,897
+  Number of sequences in database:  2,186,997
+  
+  Database: /mnt/e/Blast/nr.25
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 879,279,184
+  Number of sequences in database:  2,232,966
+  
+  Database: /mnt/e/Blast/nr.26
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 838,096,429
+  Number of sequences in database:  2,092,079
+  
+  Database: /mnt/e/Blast/nr.27
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 688,264,921
+  Number of sequences in database:  1,850,974
+  
+  Database: /mnt/e/Blast/nr.28
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 666,615,439
+  Number of sequences in database:  1,862,125
+  
+  Database: /mnt/e/Blast/nr.29
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 635,013,275
+  Number of sequences in database:  1,898,590
+  
+  Database: /mnt/e/Blast/nr.30
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 748,105,513
+  Number of sequences in database:  1,910,690
+  
+  Database: /mnt/e/Blast/nr.31
+    Posted date:  Dec 29, 2018  8:20 AM
+  Number of letters in database: 876,537,875
+  Number of sequences in database:  2,243,435
+  
+  Database: /mnt/e/Blast/nr.32
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 881,036,134
+  Number of sequences in database:  2,335,661
+  
+  Database: /mnt/e/Blast/nr.33
+    Posted date:  Dec 29, 2018  8:30 AM
+  Number of letters in database: 426,185,953
+  Number of sequences in database:  1,154,096
+  
+  Database: /mnt/e/Blast/nr.34
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 25,993,640
+  Number of sequences in database:  79,294
+  
+  Database: /mnt/e/Blast/nr.35
+    Posted date:  Dec 29, 2018  8:28 AM
+  Number of letters in database: 156,927,792
+  Number of sequences in database:  403,843
+  
+  Database: /mnt/e/Blast/nr.36
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 37,175,908
+  Number of sequences in database:  112,148
+  
+  Database: /mnt/e/Blast/nr.37
+    Posted date:  Dec 29, 2018  10:38 AM
+  Number of letters in database: 805,037,240
+  Number of sequences in database:  2,154,930
+  
+  Database: /mnt/e/Blast/nr.38
+    Posted date:  Dec 29, 2018  8:21 AM
+  Number of letters in database: 758,590,947
+  Number of sequences in database:  2,041,924
+  
+  Database: /mnt/e/Blast/nr.39
+    Posted date:  Dec 29, 2018  8:31 AM
+  Number of letters in database: 905,057,477
+  Number of sequences in database:  2,416,754
+  
+  Database: /mnt/e/Blast/nr.40
+    Posted date:  Dec 29, 2018  10:39 AM
+  Number of letters in database: 830,865,121
+  Number of sequences in database:  2,388,022
+  
+  Database: /mnt/e/Blast/nr.41
+    Posted date:  Dec 29, 2018  10:39 AM
+  Number of letters in database: 723,836,911
+  Number of sequences in database:  1,810,152
+  
+  Database: /mnt/e/Blast/nr.42
+    Posted date:  Dec 29, 2018  10:39 AM
+  Number of letters in database: 623,876,484
+  Number of sequences in database:  1,487,825
+  
+  Database: /mnt/e/Blast/nr.43
+    Posted date:  Dec 29, 2018  10:39 AM
+  Number of letters in database: 380,896,940
+  Number of sequences in database:  1,124,559
+  
+  Database: /mnt/e/Blast/nr.44
+    Posted date:  Dec 29, 2018  8:29 AM
+  Number of letters in database: 672,720,966
+  Number of sequences in database:  1,765,055
+  
+  Database: /mnt/e/Blast/nr.45
+    Posted date:  Dec 29, 2018  8:29 AM
+  Number of letters in database: 420,633,431
+  Number of sequences in database:  1,128,021
+  
+  Database: /mnt/e/Blast/nr.46
+    Posted date:  Dec 29, 2018  10:39 AM
+  Number of letters in database: 186,522,746
+  Number of sequences in database:  531,787
+  
+  Database: /mnt/e/Blast/nr.47
+    Posted date:  Dec 29, 2018  8:34 AM
+  Number of letters in database: 936,246,280
+  Number of sequences in database:  2,379,311
+  
+  Database: /mnt/e/Blast/nr.48
+    Posted date:  Dec 29, 2018  10:42 AM
+  Number of letters in database: 970,144,436
+  Number of sequences in database:  2,498,962
+  
+  Database: /mnt/e/Blast/nr.49
+    Posted date:  Dec 29, 2018  10:45 AM
+  Number of letters in database: 328,009,916
+  Number of sequences in database:  850,059
+  
+  Database: /mnt/e/Blast/nr.50
+    Posted date:  Dec 29, 2018  8:29 AM
+  Number of letters in database: 4,705,222
+  Number of sequences in database:  14,741
+  
+  Database: /mnt/e/Blast/nr.51
+    Posted date:  Dec 29, 2018  10:46 AM
+  Number of letters in database: 119,324,029
+  Number of sequences in database:  332,063
+  
+  Database: /mnt/e/Blast/nr.52
+    Posted date:  Dec 29, 2018  10:46 AM
+  Number of letters in database: 946,884,292
+  Number of sequences in database:  2,220,223
+  
+  Database: /mnt/e/Blast/nr.53
+    Posted date:  Dec 29, 2018  10:42 AM
+  Number of letters in database: 937,211,026
+  Number of sequences in database:  2,426,411
+  
+  Database: /mnt/e/Blast/nr.54
+    Posted date:  Dec 29, 2018  8:36 AM
+  Number of letters in database: 853,122,832
+  Number of sequences in database:  2,334,548
+  
+  Database: /mnt/e/Blast/nr.55
+    Posted date:  Dec 29, 2018  10:43 AM
+  Number of letters in database: 931,819,840
+  Number of sequences in database:  2,426,004
+  
+  Database: /mnt/e/Blast/nr.56
+    Posted date:  Dec 29, 2018  8:29 AM
+  Number of letters in database: 987,187,398
+  Number of sequences in database:  3,016,919
+  
+  Database: /mnt/e/Blast/nr.57
+    Posted date:  Dec 29, 2018  8:29 AM
+  Number of letters in database: 983,827,360
+  Number of sequences in database:  2,855,891
+  
+  Database: /mnt/e/Blast/nr.58
+    Posted date:  Dec 29, 2018  10:45 AM
+  Number of letters in database: 955,428,822
+  Number of sequences in database:  2,743,480
+  
+  Database: /mnt/e/Blast/nr.59
+    Posted date:  Dec 29, 2018  8:34 AM
+  Number of letters in database: 952,921,089
+  Number of sequences in database:  2,615,911
+  
+  Database: /mnt/e/Blast/nr.60
+    Posted date:  Dec 29, 2018  8:36 AM
+  Number of letters in database: 895,156,169
+  Number of sequences in database:  2,391,213
+  
+  Database: /mnt/e/Blast/nr.61
+    Posted date:  Dec 29, 2018  8:31 AM
+  Number of letters in database: 642,154,532
+  Number of sequences in database:  1,695,741
+  
+  Database: /mnt/e/Blast/nr.62
+    Posted date:  Dec 29, 2018  8:29 AM
+  Number of letters in database: 295,114,943
+  Number of sequences in database:  813,338
+  
+  Database: /mnt/e/Blast/nr.63
+    Posted date:  Dec 29, 2018  10:47 AM
+  Number of letters in database: 897,588,130
+  Number of sequences in database:  2,506,130
+  
+  Database: /mnt/e/Blast/nr.64
+    Posted date:  Dec 29, 2018  8:38 AM
+  Number of letters in database: 811,526,014
+  Number of sequences in database:  2,188,527
+  
+  Database: /mnt/e/Blast/nr.65
+    Posted date:  Dec 29, 2018  10:48 AM
+  Number of letters in database: 975,393,109
+  Number of sequences in database:  2,749,268
+  
+  Database: /mnt/e/Blast/nr.66
+    Posted date:  Dec 29, 2018  8:35 AM
+  Number of letters in database: 977,952,171
+  Number of sequences in database:  2,697,145
+  
+  Database: /mnt/e/Blast/nr.67
+    Posted date:  Dec 29, 2018  8:39 AM
+  Number of letters in database: 927,683,041
+  Number of sequences in database:  2,469,775
+  
+  Database: /mnt/e/Blast/nr.68
+    Posted date:  Dec 29, 2018  8:31 AM
+  Number of letters in database: 383,792,291
+  Number of sequences in database:  1,050,628
+  
+  Database: /mnt/e/Blast/nr.69
+    Posted date:  Dec 29, 2018  10:40 AM
+  Number of letters in database: 168,701,274
+  Number of sequences in database:  478,776
+  
+  Database: /mnt/e/Blast/nr.70
+    Posted date:  Dec 29, 2018  8:29 AM
+  Number of letters in database: 598,864,273
+  Number of sequences in database:  1,765,012
+  
+  Database: /mnt/e/Blast/nr.71
+    Posted date:  Dec 29, 2018  10:43 AM
+  Number of letters in database: 987,522,744
+  Number of sequences in database:  2,499,515
+  
+  Database: /mnt/e/Blast/nr.72
+    Posted date:  Dec 29, 2018  10:44 AM
+  Number of letters in database: 985,990,864
+  Number of sequences in database:  2,814,253
+  
+  Database: /mnt/e/Blast/nr.73
+    Posted date:  Dec 29, 2018  10:44 AM
+  Number of letters in database: 978,272,522
+  Number of sequences in database:  2,596,591
+  
+  Database: /mnt/e/Blast/nr.74
+    Posted date:  Dec 29, 2018  8:27 AM
+  Number of letters in database: 185,815,383
+  Number of sequences in database:  553,079
+  
+  Database: /mnt/e/Blast/nr.75
+    Posted date:  Dec 29, 2018  10:45 AM
+  Number of letters in database: 341,830,106
+  Number of sequences in database:  898,152
+  
+  Database: /mnt/e/Blast/nr.76
+    Posted date:  Dec 29, 2018  10:44 AM
+  Number of letters in database: 989,058,466
+  Number of sequences in database:  2,727,853
+  
+  Database: /mnt/e/Blast/nr.77
+    Posted date:  Dec 29, 2018  8:29 AM
+  Number of letters in database: 1,002,344,582
+  Number of sequences in database:  2,911,235
+  
+  Database: /mnt/e/Blast/nr.78
+    Posted date:  Dec 29, 2018  10:46 AM
+  Number of letters in database: 982,667,453
+  Number of sequences in database:  2,658,381
+  
+  Database: /mnt/e/Blast/nr.79
+    Posted date:  Dec 29, 2018  10:42 AM
+  Number of letters in database: 983,021,707
+  Number of sequences in database:  2,647,895
+  
+  Database: /mnt/e/Blast/nr.80
+    Posted date:  Dec 29, 2018  8:31 AM
+  Number of letters in database: 7,686,813
+  Number of sequences in database:  21,790
+  
+  Database: /mnt/e/Blast/nr.81
+    Posted date:  Dec 29, 2018  8:33 AM
+  Number of letters in database: 16,703,922
+  Number of sequences in database:  42,802
+  
+  Database: /mnt/e/Blast/nr.82
+    Posted date:  Dec 29, 2018  10:43 AM
+  Number of letters in database: 962,511,604
+  Number of sequences in database:  2,539,488
+  
+  Database: /mnt/e/Blast/nr.83
+    Posted date:  Dec 29, 2018  10:45 AM
+  Number of letters in database: 991,281,651
+  Number of sequences in database:  2,674,130
+  
+  Database: /mnt/e/Blast/nr.84
+    Posted date:  Dec 29, 2018  8:37 AM
+  Number of letters in database: 478,050,910
+  Number of sequences in database:  1,343,291
+  
+  Database: /mnt/e/Blast/nr.85
+    Posted date:  Dec 29, 2018  10:47 AM
+  Number of letters in database: 215,135,342
+  Number of sequences in database:  594,857
+  
+  Database: /mnt/e/Blast/nr.86
+    Posted date:  Dec 29, 2018  10:48 AM
+  Number of letters in database: 996,278,034
+  Number of sequences in database:  2,687,773
+  
+  Database: /mnt/e/Blast/nr.87
+    Posted date:  Dec 29, 2018  10:42 AM
+  Number of letters in database: 985,774,892
+  Number of sequences in database:  2,670,063
+  
+  Database: /mnt/e/Blast/nr.88
+    Posted date:  Dec 29, 2018  10:43 AM
+  Number of letters in database: 993,845,422
+  Number of sequences in database:  3,071,035
+  
+  Database: /mnt/e/Blast/nr.89
+    Posted date:  Dec 29, 2018  10:44 AM
+  Number of letters in database: 995,291,939
+  Number of sequences in database:  2,754,330
+  
+  Database: /mnt/e/Blast/nr.90
+    Posted date:  Dec 29, 2018  8:39 AM
+  Number of letters in database: 258,872,457
+  Number of sequences in database:  763,834
+  
+  Database: /mnt/e/Blast/nr.91
+    Posted date:  Dec 29, 2018  10:44 AM
+  Number of letters in database: 491,900,318
+  Number of sequences in database:  1,247,480
+  
+  Database: /mnt/e/Blast/nr.92
+    Posted date:  Dec 29, 2018  8:33 AM
+  Number of letters in database: 548,665,628
+  Number of sequences in database:  1,641,412
+  
+  Database: /mnt/e/Blast/nr.93
+    Posted date:  Dec 29, 2018  8:35 AM
+  Number of letters in database: 577,809,665
+  Number of sequences in database:  1,623,220
+  
+  Database: /mnt/e/Blast/nr.94
+    Posted date:  Dec 29, 2018  10:45 AM
+  Number of letters in database: 499,179,340
+  Number of sequences in database:  1,395,619
+  
+  Database: /mnt/e/Blast/nr.95
+    Posted date:  Dec 29, 2018  10:44 AM
+  Number of letters in database: 345,111,605
+  Number of sequences in database:  1,052,024
+  
+  Database: /mnt/e/Blast/nr.96
+    Posted date:  Dec 29, 2018  8:28 AM
+  Number of letters in database: 140,826,156
+  Number of sequences in database:  378,431
+  
+  Database: /mnt/e/Blast/nr.97
+    Posted date:  Dec 29, 2018  10:47 AM
+  Number of letters in database: 509,069,624
+  Number of sequences in database:  1,444,287
+  
+  Database: /mnt/e/Blast/nr.98
+    Posted date:  Dec 29, 2018  8:33 AM
+  Number of letters in database: 43,074,507
+  Number of sequences in database:  114,143
+  
+  Database: /mnt/e/Blast/nr.99
+    Posted date:  Dec 29, 2018  10:43 AM
+  Number of letters in database: 258,010,147
+  Number of sequences in database:  719,993
+  
+Lambda     K      H
+   0.315    0.136    0.371 
+
+Lambda     K      H
+   0.267   0.0400    0.140 
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Number of Hits to DB: 14,812,916,364
+Number of Sequences: 183906583
+Number of extensions: 444939702
+Number of successful extensions: 991317
+Number of sequences better than 9.0e-04: 23
+Number of HSP's better than  0.0 without gapping: 46
+Number of HSP's successfully gapped in prelim test: 0
+Number of HSP's that attempted gapping in prelim test: 991239
+Number of HSP's gapped (non-prelim): 77
+length of query: 64
+length of database: 67,109,518,462
+effective HSP length: 36
+effective length of query: 28
+effective length of database: 69,078,816,066
+effective search space: 1934206849848
+effective search space used: 1934206849848
+T: 11
+A: 40
+X1: 16 ( 7.3 bits)
+X2: 38 (14.6 bits)
+X3: 64 (24.7 bits)
+S1: 42 (22.0 bits)
+S2: 121 (51.3 bits)

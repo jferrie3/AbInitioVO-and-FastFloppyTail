@@ -1,0 +1,11 @@
+-in::file::vall /cm/shared/apps/rosetta/rosetta3.9/tools/fragment_tools/vall.jul19.2011.gz
+-in::file::fasta		1fox.fasta.txt
+-in::file::checkpoint		1fox.chk
+-frags::ss_pred			1fox.dcor.ppred.ss2 psipred
+-out::file::frag_prefix		1fox_dcor_frags
+-frags::describe_fragments 	1fox_dcor_frags.fsc
+-frags::scoring::config		best-protocol.wghts
+-frags::frag_sizes 		9 3 
+-frags::n_candidates		1000
+-frags::n_frags			200
+-frags::bounded_protocol

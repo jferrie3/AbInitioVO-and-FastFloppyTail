@@ -1,0 +1,12 @@
+-in::file::vall /cm/shared/apps/rosetta/rosetta3.9/tools/fragment_tools/vall.jul19.2011.gz
+-in::file::fasta		1shf.fasta.txt
+-in::file::checkpoint		1shf.chk
+-frags::ss_pred			1shf.dcor.ppred.ss2 psipred 1shf.dcor.rapx.ss2 raptorx 1shf.dcor.jufo.ss2 jufo
+-out::file::frag_prefix		1shf_dcor_frags
+-frags::describe_fragments 	1shf_dcor_frags.fsc
+-frags::scoring::config		quota-protocol.wghts
+-frags::frag_sizes 		9 3 
+-frags::n_candidates		1000
+-frags::n_frags			200
+-frags::picking::quota_config_file 	quota.def
+
