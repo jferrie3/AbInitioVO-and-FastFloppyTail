@@ -28,7 +28,7 @@ if args.Input_DisoPred_File:
 	if args.DisoPred_File_Type == 'rapx':
 		disorder_dat = np.genfromtxt(args.Input_DisoPred_File, dtype=[('dat1', 'f8'), ('dat2', '|S2'), ('dat3', '|S1'), ('dat4', 'f8')], delimiter=' ', skip_header=3) # 3 for raptorx
 	elif args.DisoPred_File_Type == 'ppred':
-		disorder_dat = np.genfromtxt(args.Input_DisoPred_File, dtype=[('dat1', 'f8'), ('dat2', '|S2'), ('dat3', '|S1'), ('dat4', 'f8')], skip_header=5) # 3 for psipred
+		disorder_dat = np.genfromtxt(args.Input_DisoPred_File, dtype=[('dat1', 'f8'), ('dat2', '|S2'), ('dat3', '|S1'), ('dat4', 'f8')], skip_header=3) # 3 for psipred
 		for disoidx,disoitem in enumerate(disorder_dat):
 			if np.isnan(disoitem[3]) == True:
 				disorder_dat[disoidx][3] = 0.0
