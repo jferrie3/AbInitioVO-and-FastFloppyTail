@@ -34,7 +34,7 @@ An anaconda environment containing all necessary packages can be found in the an
 ```conda env create -f lion.yml```
 
 __Additional Reccommended Software Packages:__
-- Blast (blast-2.2.26)
+- Blast (blast-2.2.26) (https://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/)
 - [Rosetta](https://www.rosettacommons.org/software) (code herein was tested with rosetta3.9)
 - [DSSP](https://swift.cmbi.umcn.nl/gv/dssp/) (installed via [conda](https://anaconda.org/salilab/dssp)) 
 - [Sparta+](https://spin.niddk.nih.gov/bax/software/SPARTA+/)
