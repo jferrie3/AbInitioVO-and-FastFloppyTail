@@ -141,6 +141,8 @@ Note that the same inputs described above are used by the FastFloppyTail algorit
 -inpdb  --Input_PDB_File  Name of the text file containing the PDB structure of the protein of interest. All residues are required, missing residues are not constructed
 -pymol --PYMOL Running with this flag will utilize PyMOL Mover to visualize PyRosetta simulation in real time
 -rg --RG Ability to provide a target radius of gyration via Ferrie et. al. JPBC 2020 rg score term [Note: score term weight for fa-standard portion may not be optimal]
+-fold --Fold_Tree Input FoldTree of form StartResidue,EndResidue,EdgeType. where . is use to separate Edges
+-d_seg_cut --Diso_Seg_Cutoff Disorder Segment Cutoff: specifies the number of successive residues that qualifies as a disordered segment. Default 10
 [REMOVED] -code  --Order_Code  Single letter code specifying O = ordered, D = disordered, P = partially ordered. If D is supplied, fasta is used, if P is supplied PDB is used. NOTE THIS HAS NOT BEEN EXTENSIVELY TESTED.
 ```
 After the initial structure generation is performed using _FastFloppyTail.py_, the loweset energy outputs can be selected using the _FloppyTail_Analysis.py_ script, which automatically selects the 1000 lowest energy conformers.
@@ -156,6 +158,10 @@ Since many IDPs/IDRs contain PTMs, the ability to add PTMs has been confirmed an
 	
 * If using a PDB from AbInitioVO as an input via the -inpdb flag and the structure already contains the PTM(s) of interest, nothing additional needs to be done. If the structure does not contain the PTM(s) of interest.  the PTM can be introduced by providing a FASTA modified as described below in addition to the -inpdb input structure.
 * If using the -in flag to use a FASTA as an input (for FastFloppyTail or AbInitioVO) PTMs can be introduced by applying a patch to the sequence through the canonical Rosetta nomenclature. For example, modification of Lys to Acetyl-Lys require replacing "K" with "K[LYS_p:acetylated]" in the input FASTA. The same is true for serine phosphorylation where "S" is replaced with "S[SER_p:phosphorylated]".
+
+### Adding a Fold Tree
+For sampling IDRs on proteins in isolation or in complexes it is helpful to be able to specify the fold tree. For example with a 100 residue protien with disordered regions of 1-20 and 80-100, it would be prefered to have dihedral angles propagate outward.
+To do this one would specify a FoldTree that allows the propagation to go from 50 -> 1 and 51 -> 100, which would be supplied as -fold 50,1,-1.51,100-1 in the run command for FastFloppyTail.
 
 ### Analysis
 Within the _Analysis_Scripts_ directory there are a number of scripts that are capable of compuing a variety of parameters for comparison to experiments. The _README.md_ found inside that directory 
