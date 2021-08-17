@@ -57,7 +57,8 @@ parser.add_argument('-fold', '--Fold_Tree', action='store', type=str, required=F
 	help='Input FoldTree of form StartResidue,EndResidue,EdgeType. where . is use to separate Edges')
 parser.add_argument('-d_seg_cut', '--Diso_Seg_Cutoff', action='store', type=int, required=False, default=10,
 	help='Disorder Segment Cutoff: specifies the number of successive residues that qualifies as a disordered segment. Default 10')
-
+parser.add_argument('-enableEB', '--Enable_End_Bias', action='store', type=bool, required=False,
+	help='Enables End Biasing in fragment sampling. Only required if Fold Tree is submitted')
 args = parser.parse_args()
 
 ## Imports from Parser and Defaults
@@ -115,7 +116,7 @@ if args.Disorder_Probability_Prediction_File:
 				transition_id = 'order' # meaning all residues prior to end are ordered
 			else:
 				transition_id = 'disorder' # meaning all residues prior to end are disordered
-			segment_break_list.append((seg_residue-args.Diso_Seg_Cutoff-1, transition_id)) #9
+			segment_break_list.append((seg_residue-(args.Diso_Seg_Cutoff-1), transition_id)) #9
 		per_residue_disorder = per_residue_disorder + (disorder_dat[seg_residue][3]/float(len(disorder_dat)))
 	if disorder_dat[len(disorder_dat)-1][3] >= diso_cutoff:
 		segment_break_list.append((len(disorder_dat), 'disorder'))
@@ -190,7 +191,7 @@ if args.Disorder_Probability_Prediction_File:
 			start_res = segment_break_list[res_seg_idx-1][0] + 1
 		end_res = res_seg_item[0] + 1
 		if res_seg_item[1] == 'disorder':
-			for res_idx in range(start_res,end_res+1):
+			for res_idx in range(start_res,end_res):
 				cenmap.set_bb(res_idx, True)
 				fullmap.set_bb(res_idx, True)
 				fullmap.set_chi(res_idx, True)
@@ -310,6 +311,9 @@ if args.Three_Mer_Frag_Library:
 	fragset3.read_fragment_file(args.Three_Mer_Frag_Library)
 	# Constructing the Fragment Mover
 	fragmover3 = ClassicFragmentMover(fragset3, cenmap)
+	if args.Fold_Tree:
+		if not args.EnableEndBias:
+			fragmover3.enable_end_bias_check(False)
 
 ## Minimization Movers
 vdwmin = MinMover()
