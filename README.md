@@ -143,6 +143,7 @@ Note that the same inputs described above are used by the FastFloppyTail algorit
 -rg --RG Ability to provide a target radius of gyration via Ferrie et. al. JPBC 2020 rg score term [Note: score term weight for fa-standard portion may not be optimal]
 -fold --Fold_Tree Input FoldTree of form StartResidue,EndResidue,EdgeType. where . is use to separate Edges
 -d_seg_cut --Diso_Seg_Cutoff Disorder Segment Cutoff: specifies the number of successive residues that qualifies as a disordered segment. Default 10
+-enableEB --Enable_End_Bias Enables End Biasing in fragment sampling. Only required if Fold Tree is submitted
 [REMOVED] -code  --Order_Code  Single letter code specifying O = ordered, D = disordered, P = partially ordered. If D is supplied, fasta is used, if P is supplied PDB is used. NOTE THIS HAS NOT BEEN EXTENSIVELY TESTED.
 ```
 After the initial structure generation is performed using _FastFloppyTail.py_, the loweset energy outputs can be selected using the _FloppyTail_Analysis.py_ script, which automatically selects the 1000 lowest energy conformers.
@@ -162,6 +163,8 @@ Since many IDPs/IDRs contain PTMs, the ability to add PTMs has been confirmed an
 ### Adding a Fold Tree
 For sampling IDRs on proteins in isolation or in complexes it is helpful to be able to specify the fold tree. For example with a 100 residue protien with disordered regions of 1-20 and 80-100, it would be prefered to have dihedral angles propagate outward.
 To do this one would specify a FoldTree that allows the propagation to go from 50 -> 1 and 51 -> 100, which would be supplied as -fold 50,1,-1.51,100-1 in the run command for FastFloppyTail.
+
+It is important to note that ClassicFragmentMover in Rosetta performs end biased sampling to obtain more uniform sampling distributions. However, since this end is recognized as the final residue of the sequence, end biasing is disabled by default when a fold tree is submitted to FastFloppyTail to prevent end biasing from terminating fragment sampling of N-terminal tails. If you are only sampling C-terminal tails you can re-enable end biasing using the -enableEB flag.
 
 ### Analysis
 Within the _Analysis_Scripts_ directory there are a number of scripts that are capable of compuing a variety of parameters for comparison to experiments. The _README.md_ found inside that directory 

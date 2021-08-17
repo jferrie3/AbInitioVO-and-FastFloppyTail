@@ -312,7 +312,7 @@ if args.Three_Mer_Frag_Library:
 	# Constructing the Fragment Mover
 	fragmover3 = ClassicFragmentMover(fragset3, cenmap)
 	if args.Fold_Tree:
-		if not args.EnableEndBias:
+		if not args.Enable_End_Bias:
 			fragmover3.enable_end_bias_check(False)
 
 ## Minimization Movers
