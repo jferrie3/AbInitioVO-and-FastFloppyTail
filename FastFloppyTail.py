@@ -456,12 +456,12 @@ if args.PYMOL:
 # The Simulation and Output
 for i in range(ftnstruct):
 	p.assign(starting_p)
+	mc_stage_0.reset(p)
 	if args.PYMOL:
 		pmm.apply(p)
 	stage_0.apply(p)
 	if args.PYMOL:
 		pmm.apply(p)
-	mc_stage_0.reset(p)
 	mc_stage_1.reset(p)
 	for j in range(cycles*250):
 		stage_1a.apply(p)
