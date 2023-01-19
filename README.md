@@ -79,7 +79,7 @@ After obtaining these prediction files, the script _Diso_SS2_Reweight_Opt_FFT.py
 
 - To generate a reweighted secondary structure prediction based on a disordered probability prediction:
 
-	```run Diso_SS2_Reweight_Opt_FFT.py -ssin INPUT_SS2_PREDICTION_FILE -sstype 4_LETTER_CODE -disoin INPUT_DISORDER_PREDICTION_FILE -out REWEIGHTED_SS2_PREDICTION_OUTPUT_FILE```
+	```run Diso_SS2_Reweight_Opt_FFT.py -ssin INPUT_SS2_PREDICTION_FILE -sstype 4_LETTER_CODE -disotype 4_LETTER_CODE -disoin INPUT_DISORDER_PREDICTION_FILE -out REWEIGHTED_SS2_PREDICTION_OUTPUT_FILE```
 	
 - To generate a reweighted disordered probability based on the secondary structure prediction, add the following flag to the above run command:
 
@@ -162,7 +162,7 @@ Since many IDPs/IDRs contain PTMs, the ability to add PTMs has been confirmed an
 
 ### Adding a Fold Tree
 For sampling IDRs on proteins in isolation or in complexes it is helpful to be able to specify the fold tree. For example with a 100 residue protien with disordered regions of 1-20 and 80-100, it would be prefered to have dihedral angles propagate outward.
-To do this one would specify a FoldTree that allows the propagation to go from 50 -> 1 and 51 -> 100, which would be supplied as -fold 50,1,-1.51,100-1 in the run command for FastFloppyTail.
+To do this one would specify a FoldTree that allows the propagation to go from 20 -> 1 and 21 -> 100, which would be supplied as -fold 20,1,-1.21,100,-1 in the run command for FastFloppyTail.
 
 It is important to note that ClassicFragmentMover in Rosetta performs end biased sampling to obtain more uniform sampling distributions. However, since this end is recognized as the final residue of the sequence, end biasing is disabled by default when a fold tree is submitted to FastFloppyTail to prevent end biasing from terminating fragment sampling of N-terminal tails. If you are only sampling C-terminal tails you can re-enable end biasing using the -enableEB flag.
 
