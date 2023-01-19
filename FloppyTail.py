@@ -129,12 +129,12 @@ p=Pose()
 if args.Input_FASTA_File:
 	p = pose_from_sequence(fasta_sequence, "centroid")
 if args.Input_PDB_File:
-	p = pose_from_pdb(str(args.Input_PDB_File), "centroid")
+	p = pose_from_pdb(str(args.Input_PDB_File))
 if args.Order_Code:
 	if args.Order_Code == 'D':
 		p = pose_from_sequence(fasta_sequence, "centroid")
 	if args.Order_Code == 'P':
-		p = pose_from_pdb(str(args.Input_PDB_File), "centroid")
+		p = pose_from_pdb(str(args.Input_PDB_File))
 
 starting_p = Pose()
 starting_p.assign(p)
@@ -269,7 +269,11 @@ switch = SwitchResidueTypeSetMover('fa_standard')
 switch_cen = SwitchResidueTypeSetMover('centroid')
 
 ### The Task Operations
-switch.apply(p)
+if p.is_centroid() == True:
+	switch.apply(p)
+else:
+	switch_cen.apply(starting_p)
+	
 fulltask = standard_packer_task(p)
 fulltask.restrict_to_repacking()
 switch_cen.apply(p)
