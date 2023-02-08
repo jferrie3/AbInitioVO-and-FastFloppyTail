@@ -170,7 +170,9 @@ It is important to note that ClassicFragmentMover in Rosetta performs end biased
 If you need to generate an input structure that contains a folded and disordered region, you can use the IDR_Grafting.py script in the _Analysis_Scripts_ directory. An example run would look like:
 
 ``` run IDR_Grafting.py -in Test.fasta -inpdb 1tit_Titin_I27_Ig_Renumbered.pdb -term C -out IDR_C_Graft.pdb -clash```
+
 Each of the parser flags are described below:
+
 ```
 -in  --Input_FASTA_File  Name of the text file containing the FASTA sequence of the protein of interest. Carot should not be in same line as sequence, UniProt format preferred.
 -inpdb --Input_PDB_File Name of the text file containing the PDB structure of the folded portion. All residues are required, missing residues are not constructed
